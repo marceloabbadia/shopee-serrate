@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+}
+
+form {
+  margin-top: 8%;
+  background-color: rgba(2, 255, 31, 0.645);
+  width: 400px;
+  height: 570px;
+  border-radius: 35px;
+  text-align: center;
+  line-height: 1%;
+}
+
+form > h2 {
+  padding-top: 40px;
+  color: rgb(0, 0, 0);
+}
+
+form > label {
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}
+
+input {
+  margin-bottom: 12px;
+}
+
+form > button{
+    margin-top: 30px;
+}
