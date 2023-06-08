@@ -1,0 +1,13 @@
+.header {
+   background-color: blue;
+   width: 100vw;
+   height: 5rem;
+}
+
+.nav {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   text-align: center;
+   height: 100%;
+}
