@@ -2,30 +2,40 @@ body {
   background-color: black;
 }
 
-form {
+.form_cadastro {
   margin-top: 8%;
   background-color: rgba(2, 255, 31, 0.645);
   width: 400px;
-  height: 570px;
+  height: 650px;
   border-radius: 35px;
   text-align: center;
-  line-height: 1%;
+  line-height: 30px;
+  margin-left: 40%;
 }
 
-form > h2 {
+.form_cadastro > h2 {
   padding-top: 40px;
+  padding-bottom: 30px;
   color: rgb(0, 0, 0);
 }
 
-form > label {
+.form_cadastro > label {
   color: rgb(0, 0, 0);
   text-transform: uppercase;
 }
 
-input {
-  margin-bottom: 12px;
+.form_cadastro > input {
+  width: 70%;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
 }
 
-form > button{
-    margin-top: 30px;
+.form_cadastro > button {
+  margin-top: 10px;
+  width: 30%;
+  margin-right: 20px;
+  height: 30px;
 }
+

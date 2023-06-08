@@ -6,7 +6,7 @@ const Cadastro = () => {
   return (
     <>
       <div>
-        <form>
+        <form className={styles.form_cadastro}>
           <h2>CADASTRO</h2>
           <input type="text" required />
           <p></p>

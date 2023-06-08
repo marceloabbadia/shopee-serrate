@@ -6,20 +6,22 @@ const Login = () => {
   return (
     <>
       <div>
-        <form>
+        <form className={styles.form_login}>
           <h3>LOGIN</h3>
-          <label htmlFor="">Email: </label>
           <input type="email" required />
+          <p></p>
+          <label htmlFor="">Email: </label>
           <br />
-          <label htmlFor="">Senha: </label>
           <input type="password" required />
+          <p></p>
+          <label htmlFor="">Senha: </label>
           <br />
           <button>Enviar</button>
           <button>Limpar</button>
           <br />
           <br />
           <p>Nao é cadastrado?</p>
-          <button className={styles.btn_cadastro}>Clique Aqui</button>
+          <button className={styles.btn_cadastro}>Cadraste-se</button>
           <br />
         </form>
       </div>
