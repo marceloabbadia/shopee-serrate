@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../../api/api";
 import styles from "./cadastro.module.css";
+import { Link } from "react-router-dom";
 
 const Cadastro = () => {
   const [nome, setNome] = useState([]);
@@ -144,7 +145,10 @@ const Cadastro = () => {
           </button>
           <br />
           <br />
-          <button className={styles.btn_voltar}>Voltar</button>
+          <Link to="/">
+            <button className={styles.btn_voltar}>Voltar</button>
+          </Link>
+
           <br />
         </form>
       </div>

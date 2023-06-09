@@ -1,4 +1,7 @@
 import styles from "./header.module.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import { BsSearch, BsCart3 } from "react-icons/bs";
 
 const Header = () => {
   return (
@@ -11,7 +14,9 @@ const Header = () => {
           <div>
             <input type="search" required placeholder="pesquisar por nome" />
             <label htmlFor="">
-              <button>pesquisar</button>
+              <button className="btn_pesquisa">
+                <BsSearch />
+              </button>
             </label>
             <br />
             <label htmlFor="">Categoria</label>
@@ -23,12 +28,22 @@ const Header = () => {
               <option value="">Eletronicos</option>
             </select>
           </div>
-          <div className={styles.ul}>
-            <ul>
-              <li>Carrinho</li>
-              <li>Login/Cadastro</li>
-              <li>Compras</li>
-            </ul>
+          <div className={styles.botoes_header}>
+            <Link to="/login">
+              <button>
+                <BsCart3 />
+              </button>
+            </Link>
+
+            <br />
+
+            <Link to="/login">
+              <button>Login </button>
+            </Link>
+
+            <br />
+
+            <button>Compras</button>
           </div>
         </nav>
       </div>

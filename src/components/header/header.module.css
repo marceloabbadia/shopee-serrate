@@ -1,13 +1,23 @@
 .header {
-   background-color: blue;
-   width: 100vw;
-   height: 5rem;
+  background-color: blue;
+  width: 100vw;
+  height: 5rem;
 }
 
 .nav {
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   text-align: center;
-   height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.botoes_header {
+  padding: 15px;
+ 
+}
+
+.btn_pesquisa{
+  border: none;
+  
 }
