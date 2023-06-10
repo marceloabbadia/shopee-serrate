@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import api from '../../api/api'
 import styles from './listaProdutos.module.css'
+import { Link } from 'react-router-dom'
+import { BsHandThumbsDown, BsHandThumbsUp } from 'react-icons/bs'
 
 const ListaProdutos = () => {
    const [data, setData] = useState([])
@@ -21,22 +23,34 @@ const ListaProdutos = () => {
                {data.map((item, index) => {
                   return (
                      <div key={index} className={styles.itens}>
-                        <img src={item.image} alt="" width={200} />
+                        <img
+                           src={item.image}
+                           alt={item.description}
+                           width={150}
+                        />
                         <h2>{item.title}</h2>
-                        <p>{item.description}</p>
+                        <p>
+                           {item.description.length > 150
+                              ? item.description.substring(0, 150) + '...'
+                              : item.description}
+                        </p>
                         <h3>R$ {item.price}</h3>
                         <h4>
                            Avaliações <br />
-                           <strong>
-                              Positivos {item.rating.feedbacksPositivos}
-                           </strong>
-                           <br />
-                           <strong>
-                              Negativos {item.rating.feedbacksNegativos}
-                           </strong>
+                           <div className={styles.avaliacoes}>
+                              <strong>
+                                 <BsHandThumbsUp /> {item.feedbacksPositivos}
+                              </strong>
+                              <br />
+                              <strong>
+                                 <BsHandThumbsDown /> {item.feedbacksNegativos}
+                              </strong>
+                           </div>
                         </h4>
-                        <button>Ver mais</button>
-                        <button>Ver mais</button>
+                        <Link to={`/detalheProduto/${item.id}`}>
+                           <button>Ver mais</button>
+                        </Link>
+                        <button>Adicionar carrinho</button>
                      </div>
                   )
                })}

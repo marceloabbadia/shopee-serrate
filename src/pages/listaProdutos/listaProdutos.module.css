@@ -3,24 +3,29 @@
 }
 
 .card {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  padding: 10px;
-  gap: 2rem;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   width: 100%;
+   text-align: center;
+   align-items: center;
+   padding: 10px;
+   gap: 2rem;
 }
 
-.itens{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 25rem;
-  height: 35rem;
-  padding: 10px;
-  box-shadow: 1px 1px 10px 5px #ddd;
-  border-radius: 6px;
+.itens {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 25rem;
+   height: 35rem;
+   padding: 10px;
+   box-shadow: 1px 1px 10px 5px #ddd;
+   border-radius: 6px;
+}
+
+.avaliacoes {
+   display: flex;
+   margin: 10px;
 }
