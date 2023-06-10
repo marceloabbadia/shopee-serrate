@@ -1,51 +1,40 @@
 .container_geral {
-  margin: auto;
+  display: flex;
   width: 860px;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  height: 600px;
-
+  margin: auto;
+  font-family: "Nunito", sans-serif;
 }
 
-.container_geral1 {
+.login1 > h2 {
+  margin-top: 50px;
+}
+
+.cadastro1 > h2 {
+  margin-top: 50px;
+}
+
+.login1 {
+  width: 50%;
+  text-align: center;
+  height: 435px;
+}
+
+.cadastro1 {
+  height: 435px;
+  width: 50%;
+  text-align: center;
+}
+
+.texto_login {
+  color: red;
+  font-size: 12px;
+}
+
+.barra_central {
+  margin-top: 150px;
+  position: absolute;
+  border-right: 2px solid rgba(0, 0, 0, 0.147);
   width: 430px;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-right: 2px solid black
-}
-
-
-.container_geral2 {
-  width: 430px;
-  height: 600px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
-
-.container_logineusuario1 > h2 {
-position: absolute;
-margin-top: -150px;
-margin-left: 50px;
-
-}
-
-.container_logineusuario2 > h2 {
-    position: absolute;
-    margin-top: -120px;
-    margin-left: 40px;
-    
-    }
-
-
-.btn_entrar1 {
-  padding: 10px;
-}
-
-.btn_entrar2 {
-  padding: 2px;
+  height: 400px;
 }
