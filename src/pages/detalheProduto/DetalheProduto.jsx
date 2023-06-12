@@ -1,9 +1,10 @@
 import { Link, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import api from '../../api/api'
 import styles from './detalheProduto.module.css'
 import { CircularProgress } from '@mui/material'
 import { BsHandThumbsDown, BsHandThumbsUp } from 'react-icons/bs'
+import { CarrinhoContext } from '../../context/Context'
 
 const DetalheProduto = () => {
    const [produto, setProduto] = useState({})
@@ -37,13 +38,9 @@ const DetalheProduto = () => {
       setRelacionados(response.data)
    }
 
-   // const contadorPositivo = () => {
-   //    setPositivo(positivo + 1)
-   // }
-
-   // const contadorNegativo = () => {
-   //    setNegativo(negativo - 1)
-   // }
+   const GlobalState = useContext(CarrinhoContext)
+   const dispatch = GlobalState.dispatch
+   console.log(GlobalState)
 
    return (
       <>
@@ -65,6 +62,7 @@ const DetalheProduto = () => {
             <button>voltar</button>
          </Link>
          <div className="container">
+            {(produto.quantidade = 1)}
             <div className={styles.produto}>
                <div className={styles.info}>
                   <img
@@ -84,6 +82,11 @@ const DetalheProduto = () => {
                      <BsHandThumbsDown />
                      <p>{produto.feedbacksNegativos}</p>
                   </div>
+                  <button
+                     onClick={() => dispatch({ type: 'ADD', payload: produto })}
+                  >
+                     Adicionar carrinho
+                  </button>
                </div>
             </div>
          </div>

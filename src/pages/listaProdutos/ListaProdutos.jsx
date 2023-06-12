@@ -1,8 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import api from '../../api/api'
 import styles from './listaProdutos.module.css'
 import { Link } from 'react-router-dom'
 import { BsHandThumbsDown, BsHandThumbsUp } from 'react-icons/bs'
+import { CarrinhoContext } from '../../context/Context'
 
 const ListaProdutos = () => {
    const [data, setData] = useState([])
@@ -16,11 +17,15 @@ const ListaProdutos = () => {
       data()
    }, [])
 
+   const GlobalState = useContext(CarrinhoContext)
+   const dispatch = GlobalState.dispatch
+
    return (
       <>
          <div className={styles.container}>
             <div className={styles.card}>
                {data.map((item, index) => {
+                  item.quantidade = 1
                   return (
                      <div key={index} className={styles.itens}>
                         <img
@@ -50,7 +55,13 @@ const ListaProdutos = () => {
                         <Link to={`/detalheProduto/${item.id}`}>
                            <button>Ver mais</button>
                         </Link>
-                        <button>Adicionar carrinho</button>
+                        <button
+                           onClick={() =>
+                              dispatch({ type: 'ADD', payload: item })
+                           }
+                        >
+                           Adicionar carrinho
+                        </button>
                      </div>
                   )
                })}

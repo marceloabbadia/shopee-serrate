@@ -1,0 +1,38 @@
+.carrinho {
+   display: flex;
+   flex-direction: column;
+   gap: 32px;
+   padding: 128px;
+}
+
+.carrinho .card {
+   display: flex;
+   justify-content: space-between;
+}
+
+.carrinho .card img {
+   width: 80px;
+   height: 80px;
+}
+
+.carrinho .card p {
+   width: 200px;
+}
+.carrinho .card .quantidade {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.carrinho .card .quantidade p {
+   width: 50px;
+   text-align: center;
+}
+.carrinho .card .quantidade button {
+   width: 50px;
+}
+
+.carrinho .total {
+   text-align: right;
+   border-top: 1px solid black;
+}
