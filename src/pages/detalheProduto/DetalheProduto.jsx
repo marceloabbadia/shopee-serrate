@@ -11,8 +11,7 @@ const DetalheProduto = () => {
    const [loaded, setLoaded] = useState(false)
    const [relacionados, setRelacionados] = useState([])
    const { id } = useParams()
-   // const [positivo, setPositivo] = useState(0)
-   // const [negativo, setNegativo] = useState(0)
+   const token = localStorage.getItem('token')
 
    useEffect(() => {
       lerDados()
@@ -40,10 +39,10 @@ const DetalheProduto = () => {
 
    const GlobalState = useContext(CarrinhoContext)
    const dispatch = GlobalState.dispatch
-   console.log(GlobalState)
 
    return (
       <>
+         <p style={{ visibility: 'hidden' }}>{(produto.quantidade = 1)}</p>
          {loaded && (
             <CircularProgress
                style={{
@@ -59,10 +58,9 @@ const DetalheProduto = () => {
             />
          )}
          <Link to="/">
-            <button>voltar</button>
+            <button className={styles.btn_voltar}>voltar</button>
          </Link>
          <div className="container">
-            {(produto.quantidade = 1)}
             <div className={styles.produto}>
                <div className={styles.info}>
                   <img

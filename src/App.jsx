@@ -7,6 +7,7 @@ import DetalheProduto from './pages/detalheProduto/DetalheProduto'
 import LoginEUsuario from './pages/logineusuario/logineusuario'
 import Carrinho from './pages/carrinho/Carrinho'
 import { Context } from './context/Context'
+import Footer from './components/footer/Footer'
 
 function App() {
    return (
@@ -19,6 +20,7 @@ function App() {
                <Route path="/detalheProduto/:id" element={<DetalheProduto />} />
                <Route path="/carrinho" element={<Carrinho />} />
             </Routes>
+            <Footer/>
          </BrowserRouter>
       </>
    )

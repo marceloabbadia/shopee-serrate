@@ -4,9 +4,7 @@ import { Link } from 'react-router-dom'
 import { BsSearch, BsCart3 } from 'react-icons/bs'
 
 const Header = () => {
-   const handleSearchBar = () => {
-      alert('teste')
-   }
+   const token = localStorage.getItem('token')
 
    return (
       <>
@@ -18,9 +16,6 @@ const Header = () => {
                   </Link>
                </div>
                <div>
-                  {/* <form onSubmit={handleSearchBar}>
-            </form> */}
-
                   <input
                      type="search"
                      required
@@ -42,13 +37,17 @@ const Header = () => {
                   </select>
                </div>
                <div className={styles.botoes_header}>
-                  <Link to="/login">
+                  {token == null ? (
+                     <button disabled>
+                        <BsCart3 />
+                     </button>
+                  ) : (
                      <button>
-                        <Link to='/carrinho'>
+                        <Link to="/carrinho">
                            <BsCart3 />
                         </Link>
                      </button>
-                  </Link>
+                  )}
 
                   <br />
 

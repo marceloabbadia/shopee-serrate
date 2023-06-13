@@ -5,34 +5,46 @@
    padding: 128px;
 }
 
-.carrinho .card {
+.card {
    display: flex;
    justify-content: space-between;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+   padding-bottom: 20px;
 }
 
-.carrinho .card img {
+.card img {
    width: 80px;
    height: 80px;
 }
 
-.carrinho .card p {
+.card p {
    width: 200px;
 }
-.carrinho .card .quantidade {
+.quantidade {
    display: flex;
    flex-direction: column;
    align-items: center;
 }
 
-.carrinho .card .quantidade p {
+.quantidade p {
    width: 50px;
    text-align: center;
 }
-.carrinho .card .quantidade button {
+.quantidade button {
    width: 50px;
 }
 
-.carrinho .total {
+.total {
    text-align: right;
-   border-top: 1px solid black;
+}
+
+.tabela {
+   display: flex;
+   justify-content: space-between;
+   margin-right: 150px;
+}
+
+.btn_compra {
+   display: flex;
+   margin-left: auto;
 }

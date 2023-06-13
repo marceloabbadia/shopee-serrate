@@ -1,11 +1,4 @@
 {
-  "users": [
-    {
-      "email": "raphaelrochap@gmail.com",
-      "password": "$2a$10$SBSfree4ybtT64HIPDWcl.TV2dx2RwuWA8203QjMTWj2QSnxtBvYC",
-      "id": 1
-    }
-  ],
   "produtos": [
     {
       "id": 1,
@@ -16,7 +9,7 @@
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
       "feedbacksPositivos": 10,
       "feedbacksNegativos": 2,
-      "amount": 10
+      "amount": 3
     },
     {
       "id": 2,
@@ -27,7 +20,7 @@
       "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
       "feedbacksPositivos": 10,
       "feedbacksNegativos": 2,
-      "amount": 10
+      "amount": 3
     },
     {
       "id": 3,
@@ -228,23 +221,6 @@
         "feedbacksNegativos": 2
       },
       "amount": 10
-    }
-  ],
-  "pedidos": [
-    {
-      "itens": [
-        {
-          "idProduto": 1,
-          "quantidade": 2
-        },
-        {
-          "idProduto": 2,
-          "quantidade": 2
-        }
-      ],
-      "valorTotal": 4.2,
-      "idUser": 1,
-      "id": 1
     }
   ]
 }

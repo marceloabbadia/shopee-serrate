@@ -40,7 +40,7 @@
 
 .avaliacoes {
    display: flex;
-   margin-top: 30px;
+   margin: 10px 0;
    gap: 1rem;
 }
 .relacionados {
@@ -64,4 +64,10 @@
 
 .cards_relacionados h2 {
    margin-top: 15px;
+}
+
+.btn_voltar {
+   position: relative;
+   display: flex;
+   margin: 1rem;
 }
