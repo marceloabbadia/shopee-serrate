@@ -1,31 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Quicksand:wght@300;400;500;600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://img.freepik.com/vetores-gratis/padrao-sobre-shopping_1061-495.jpg?w=740&t=st=1686700787~exp=1686701387~hmac=74147f87294d21f103eb373f7d2dc25b68c62ae2051e0ef0479736896bdbc26c');
+
+
+
 .container {
-  display: flex;
+   display: flex;
+
 }
+
+.ArrowCircleLeftIcon{
+   width: 90px;
+   height: 90px;
+}
+
 .produto {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100%;
-  text-align: center;
-  align-items: center;
-  padding: 10px;
-  gap: 2rem;
+   display: flex;
+   justify-content: center;
+   flex-wrap: wrap;
+   width: 100%;
+   text-align: center;
+   align-items: center;
+   padding: 20px;
+   gap: 2rem;
+   
+   
+}
+
+.img {
+   margin-top: 120px;
 }
 
 .info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 25rem;
-  height: 40rem;
-  padding: 10px;
-  box-shadow: 1px 1px 10px 5px #ddd;
-  border-radius: 6px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 25rem;
+   height: 40rem;
+   padding: 10px;
+   box-shadow: 1px 1px 10px 5px #ddd;
+   border-radius: 6px;
+   font-family: 'Roboto', sans-serif;
+   background-image: linear-gradient( #ffffffd9, #ffffff8f , #A8A8A8);
+   border-color: #5d5d5d;
+   
 }
 
-.info h2 {
-  margin: 20px 0;
+.info strong {
+
+   border-radius: 10px;
 }
 
 .info strong {
@@ -33,15 +56,20 @@
   font-size: 24px;
 }
 
+.retorno {
+   margin: 1% 1%;
+}
+
+
 .info h3 {
   margin: 10px 0;
   text-transform: uppercase;
 }
 
 .avaliacoes {
-  display: flex;
-  margin: 10px 0;
-  gap: 1rem;
+   display: flex;
+   padding: 30px;
+   gap: 1rem;
 }
 .relacionados {
   display: flex;
@@ -51,15 +79,19 @@
 }
 
 .cards_relacionados {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-  width: 20rem;
-  height: 15rem;
-  box-shadow: 1px 1px 10px 5px #ddd;
-  margin: 0 auto;
-  margin-bottom: 30px;
+   display: flex;
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   width: 20rem;
+   height: 15rem;
+   box-shadow: 1px 1px 10px 5px #ddd;
+   margin: 0 auto;
+   margin-bottom: 30px;
+   border-radius: 20px;
+   border-top: 0.5px solid ;
+   border-color: #5d5d5d;
+   background-image: linear-gradient( #ffffffd9, #ffffff8f , #A8A8A8);
 }
 
 .cards_relacionados h2 {

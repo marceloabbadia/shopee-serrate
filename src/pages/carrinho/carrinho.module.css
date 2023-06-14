@@ -1,15 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+   font-family: 'Roboto', sans-serif;
+}
+
 .carrinho {
    display: flex;
    flex-direction: column;
    gap: 32px;
-   padding: 128px;
+   padding: 50px;
+   font-family: 'Roboto', sans-serif;  
+   font-size: 20px;
 }
 
-.card {
+
+.carrinho .card {
    display: flex;
    justify-content: space-between;
-   border-bottom: 1px solid rgba(0, 0, 0, 0.219);
-   padding-bottom: 20px;
+   border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color:  purple #3b32a1 purple #3b32a1;
+    padding: 20px;
+    
 }
 
 .card img {
@@ -19,6 +33,8 @@
 
 .card p {
    width: 200px;
+   display: center;
+   font-family: 20px;
 }
 .quantidade {
    display: flex;
@@ -36,15 +52,12 @@
 
 .total {
    text-align: right;
+   border-top: 0.5px solid ;
+   border-color:  purple  #3b32a1 blueviolet;
+   font-size: 1rem;
+   font-stretch: normal;
 }
 
-.tabela {
-   display: flex;
-   justify-content: space-between;
-   margin-right: 150px;
-}
-
-.btn_compra {
-   display: flex;
-   margin-left: auto;
+.retorno {
+   margin: 1% 1%;
 }

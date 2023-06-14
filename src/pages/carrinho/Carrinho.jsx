@@ -1,9 +1,14 @@
-import { useContext, React, useState, useEffect } from 'react'
+import { useContext, React, useState } from 'react'
 import styles from './carrinho.module.css'
 import { CarrinhoContext } from '../../context/Context'
-import { Box, Button, Modal, Typography } from '@mui/material'
+import { Box, Button, IconButton, Modal, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import api from '../../api/api'
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline'
+import HighlightOffIcon from '@mui/icons-material/HighlightOff'
+import LocalAtmIcon from '@mui/icons-material/LocalAtm'
+import ControlPointIcon from '@mui/icons-material/ControlPoint'
 
 const Carrinho = () => {
    const GlobalState = useContext(CarrinhoContext)
@@ -46,6 +51,18 @@ const Carrinho = () => {
    }
    return (
       <>
+         <div className={styles.retorno}>
+            <Link to="/">
+               <Button
+                  variant="contained"
+                  size="larger"
+                  color="secondary"
+                  startIcon={<ArrowCircleLeftIcon sx={{ fontSize: 40 }} />}
+               >
+                  RETORNAR
+               </Button>
+            </Link>
+         </div>
          <div className={styles.carrinho}>
             <tr className={styles.tabela}>
                <th>Imagem</th>
@@ -63,19 +80,23 @@ const Carrinho = () => {
                      <p>{item.amount} Un</p>
                      <div className={styles.quantidade}>
                         {item.quantidade < item.amount ? (
-                           <button
+                           <IconButton
+                              color="success"
+                              aria-label="add to shopping cart"
                               onClick={() =>
                                  dispatch({ type: 'INCREASE', payload: item })
                               }
                            >
-                              +
-                           </button>
+                              <ControlPointIcon />
+                           </IconButton>
                         ) : (
                            <button disabled>+</button>
                         )}
 
                         <p>{item.quantidade}</p>
-                        <button
+                        <IconButton
+                           color="error"
+                           aria-label="add to shopping cart"
                            onClick={() => {
                               if (item.quantidade > 1) {
                                  dispatch({ type: 'DECREASE', payload: item })
@@ -84,24 +105,26 @@ const Carrinho = () => {
                               }
                            }}
                         >
-                           -
-                        </button>
+                           <RemoveCircleOutlineIcon />
+                        </IconButton>
                      </div>
-
-                     <h2
+                     <IconButton
+                        color="error"
+                        aria-label="remover"
                         className={styles.btn_remove}
                         onClick={() =>
                            dispatch({ type: 'REMOVE', payload: item })
                         }
                      >
-                        x
-                     </h2>
+                        <HighlightOffIcon />
+                     </IconButton>
                   </div>
                )
             })}
             {state.length > 0 && (
                <div className={styles.total}>
-                  <h2>Total = {total.toFixed(2)}</h2>
+                  <LocalAtmIcon color="success" sx={{ fontSize: 31 }} />
+                  <h2>Total = R$ {total.toFixed(2)}</h2>
                </div>
             )}
             <div className={styles.btn_compra}>
