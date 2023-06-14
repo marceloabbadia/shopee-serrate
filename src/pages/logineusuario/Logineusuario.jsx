@@ -186,11 +186,11 @@ const LoginEUsuario = () => {
                   </FormControl>
                   <br />
                   <br />
-                  <Link to="/">
-                     <Button variant="contained" type="submit">
-                        Entrar
-                     </Button>
-                  </Link>
+                  {/* <Link to="/"> */}
+                  <Button variant="contained" type="submit">
+                     Entrar
+                  </Button>
+                  {/* </Link> */}
 
                   <p></p>
                   <br />

@@ -74,57 +74,63 @@ const ListaProdutos = () => {
             </div>
          )}
 
-         <div className={styles.tudo}></div>
          <div className={styles.container}>
             <div className={styles.card}>
                {data.map((item, index) => {
                   item.quantidade = 1
-                  return (
-                     <div key={index} className={styles.itens}>
-                        <img
-                           src={item.image}
-                           alt={item.description}
-                           width={80}
-                        />
-                        <h2>{item.title}</h2>
-                        <p>
-                           {item.description.length > 150
-                              ? item.description.substring(0, 150) + '...'
-                              : item.description}
-                        </p>
-                        <h3>R$ {item.price}</h3>
-                        <h4>Avaliações</h4>
-                        <div className={styles.avaliacoes}>
-                           <span>
-                              <ThumbUpIcon color="success" />{' '}
-                              <h5>{item.feedbacksPositivos}</h5>
-                           </span>
-                           <span>
-                              <ThumbDownIcon color="error" />{' '}
-                              <h5>{item.feedbacksNegativos}</h5>
-                           </span>
-                        </div>
+                  {
+                     if (item.amount > 0) {
+                        return (
+                           <div key={index} className={styles.itens}>
+                              <img
+                                 src={item.image}
+                                 alt={item.description}
+                                 width={80}
+                              />
+                              <h2>{item.title}</h2>
+                              <p>
+                                 {item.description.length > 150
+                                    ? item.description.substring(0, 150) + '...'
+                                    : item.description}
+                              </p>
+                              <h3>R$ {item.price}</h3>
+                              <h4>Avaliações</h4>
+                              <div className={styles.avaliacoes}>
+                                 <span>
+                                    <ThumbUpIcon color="success" />{' '}
+                                    <h5>{item.feedbacksPositivos}</h5>
+                                 </span>
+                                 <span>
+                                    <ThumbDownIcon color="error" />{' '}
+                                    <h5>{item.feedbacksNegativos}</h5>
+                                 </span>
+                              </div>
 
-                        <Link to={`/detalheProduto/${item.id}`}>
-                           <Button
-                              variant="outlined"
-                              style={{ marginBottom: '10px' }}
-                           >
-                              VER MAIS
-                           </Button>
-                        </Link>
-                        <Button
-                           className="vermais"
-                           variant="contained"
-                           endIcon={<AddShoppingCartIcon />}
-                           onClick={() =>
-                              dispatch({ type: 'ADD', payload: item })
-                           }
-                        >
-                           Adicionar ao carrinho
-                        </Button>
-                     </div>
-                  )
+                              <Link to={`/detalheProduto/${item.id}`}>
+                                 <Button
+                                    variant="outlined"
+                                    style={{ marginBottom: '10px' }}
+                                 >
+                                    VER MAIS
+                                 </Button>
+                              </Link>
+                              <Button
+                                 disabled={!token}
+                                 className="vermais"
+                                 variant="contained"
+                                 endIcon={<AddShoppingCartIcon />}
+                                 onClick={() =>
+                                    dispatch({ type: 'ADD', payload: item })
+                                 }
+                              >
+                                 {token
+                                    ? 'Adicionar ao carrinho'
+                                    : 'Faça Login para acessar ao carrinho'}
+                              </Button>
+                           </div>
+                        )
+                     }
+                  }
                })}
             </div>
          </div>

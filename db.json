@@ -7,7 +7,7 @@
       "description": "A mochila perfeita para usar no dia a dia ou em trilhas e viagens. Possui compartimento para laptop de até 15 polegadas.",
       "category": "masculino",
       "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
-      "feedbacksPositivos": 10,
+      "feedbacksPositivos": 5,
       "feedbacksNegativos": 2,
       "amount": 0
     },
@@ -18,9 +18,9 @@
       "description": "Camisa básica lisa com corte e caimento ajustado ao corpo. Tecido leve, macio e respirável.",
       "category": "masculino",
       "image": "https://fakestoreapi.com/img/71-3HjGNDUL._AC_SY879._SX._UX._SY._UY_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
-      "amount": 50
+      "feedbacksPositivos": 4,
+      "feedbacksNegativos": 5,
+      "amount": 49
     },
     {
       "id": 3,
@@ -29,8 +29,8 @@
       "description": "Agasalho masculino para outono/inverno. Ótima opção de presente para pai, filho, marido, etc.",
       "category": "masculino",
       "image": "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 13,
+      "feedbacksNegativos": 5,
       "amount": 4
     },
     {
@@ -40,8 +40,8 @@
       "description": "Camisa básica lisa de manga comprida, com corte e caimento ajustado ao corpo. Tecido leve, macio e respirável.",
       "category": "masculino",
       "image": "https://fakestoreapi.com/img/71YXzeOuslL._AC_UY879_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 9,
+      "feedbacksNegativos": 5,
       "amount": 10
     },
     {
@@ -51,8 +51,8 @@
       "description": "Marca John Hardy coleção Lendas. O bracelete foi inspirado no mítico dragão da água que protege as pérolas nos oceanos..",
       "category": "jóias",
       "image": "https://fakestoreapi.com/img/71pWzhdJNwL._AC_UL640_QL65_ML3_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 4,
+      "feedbacksNegativos": 7,
       "amount": 10
     },
     {
@@ -62,8 +62,8 @@
       "description": "Anel de ouro cravejado",
       "category": "jóias",
       "image": "https://fakestoreapi.com/img/61sbMiUnoGL._AC_UL640_QL65_ML3_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 8,
+      "feedbacksNegativos": 6,
       "amount": 10
     },
     {
@@ -73,8 +73,8 @@
       "description": "Anel classico de diamante solitário para noivado, casamento, aniversário, etc. ",
       "category": "jóias",
       "image": "https://fakestoreapi.com/img/71YAIFU48IL._AC_UL640_QL65_ML3_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 5,
+      "feedbacksNegativos": 6,
       "amount": 10
     },
     {
@@ -84,8 +84,8 @@
       "description": "Brinco alargador de aço inoxidável, cor rose gold",
       "category": "jóias",
       "image": "https://fakestoreapi.com/img/51UDEzMJVpL._AC_UL640_QL65_ML3_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 8,
+      "feedbacksNegativos": 4,
       "amount": 10
     },
     {
@@ -95,8 +95,8 @@
       "description": "HD externo portátil com 2TB de capacidade formatado NTFS para Windows 10, Windows 8.1, Windows 7.",
       "category": "Eletrônicos",
       "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 14,
+      "feedbacksNegativos": 6,
       "amount": 10
     },
     {
@@ -107,7 +107,7 @@
       "category": "Eletrônicos",
       "image": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg",
       "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksNegativos": 7,
       "amount": 10
     },
     {
@@ -117,8 +117,8 @@
       "description": "Nano cartão de memória interno SSD 256GB",
       "category": "Eletrônicos",
       "image": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 7,
+      "feedbacksNegativos": 4,
       "amount": 10
     },
     {
@@ -128,8 +128,8 @@
       "description": "Aumente a sua capacidade de jogos para PS4",
       "category": "Eletrônicos",
       "image": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 8,
+      "feedbacksNegativos": 6,
       "amount": 10
     },
     {
@@ -139,8 +139,8 @@
       "description": " Monitor Acer SB220Q bi 21.5 polegadas Full HD (1920 x 1080) IPS Ultra-Thin",
       "category": "Eletrônicos",
       "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 5,
+      "feedbacksNegativos": 5,
       "amount": 10
     },
     {
@@ -150,8 +150,8 @@
       "description": "Monitor curvo Samsung 49 polegadas, CHG90 144Hz, curvo para gaming (LC49HG90DMNXZA) – Tela Super Ultrawide QLED",
       "category": "Eletrônicos",
       "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 6,
+      "feedbacksNegativos": 3,
       "amount": 10
     },
     {
@@ -161,8 +161,8 @@
       "description": "Bolsos internos e externos, a prova de vento e a prova de água",
       "category": "feminino",
       "image": "https://fakestoreapi.com/img/51Y5NI-I5jL._AC_UX679_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 7,
+      "feedbacksNegativos": 4,
       "amount": 10
     },
     {
@@ -172,7 +172,7 @@
       "description": "Lavar a mão, não usar alvejante, não usar ferro de passar roupa",
       "category": "feminino",
       "image": "https://fakestoreapi.com/img/81XH0e8fefL._AC_UY879_.jpg",
-      "feedbacksPositivos": 10,
+      "feedbacksPositivos": 9,
       "feedbacksNegativos": 2,
       "amount": 10
     },
@@ -184,7 +184,7 @@
       "category": "feminino",
       "image": "https://fakestoreapi.com/img/71HblAHs5xL._AC_UY879_-2.jpg",
       "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksNegativos": 6,
       "amount": 10
     },
     {
@@ -194,8 +194,8 @@
       "description": "Tecido leve com elasticidade, para maior conforto",
       "category": "feminino",
       "image": "https://fakestoreapi.com/img/71z3kpMAYsL._AC_UY879_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 13,
+      "feedbacksNegativos": 4,
       "amount": 10
     },
     {
@@ -205,8 +205,8 @@
       "description": "Camisa feminina de manga curta, tecido ajustado, leve e respirável. Pode lavar na máquina.",
       "category": "feminino",
       "image": "https://fakestoreapi.com/img/51eg55uWmdL._AC_UX679_.jpg",
-      "feedbacksPositivos": 10,
-      "feedbacksNegativos": 2,
+      "feedbacksPositivos": 12,
+      "feedbacksNegativos": 5,
       "amount": 10
     },
     {
@@ -217,8 +217,8 @@
       "category": "feminino",
       "image": "https://fakestoreapi.com/img/61pHAEJ4NML._AC_UX679_.jpg",
       "rating": {
-        "feedbacksPositivos": 10,
-        "feedbacksNegativos": 2
+        "feedbacksPositivos": 16,
+        "feedbacksNegativos": 7
       },
       "amount": 10
     }

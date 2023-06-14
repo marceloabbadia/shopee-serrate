@@ -66,8 +66,9 @@ const DetalheProduto = () => {
                   <Button
                      variant="contained"
                      size="larger"
-                     color="secondary"
+                     color="primary"
                      startIcon={<ArrowCircleLeftIcon sx={{ fontSize: 40 }} />}
+                     style={{marginLeft: 20}}
                   >
                      RETORNAR
                   </Button>
@@ -122,6 +123,10 @@ const DetalheProduto = () => {
                               <Link
                                  to={`/detalheProduto/${item.id}`}
                                  reloadDocument
+                                 style={{
+                                    color: '#091238',
+                                    textDecoration: 'none'
+                                 }}
                               >
                                  <img
                                     src={item.image}
