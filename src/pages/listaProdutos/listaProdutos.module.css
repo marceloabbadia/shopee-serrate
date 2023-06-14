@@ -4,7 +4,6 @@
 }
 
 .card {
-<<<<<<< HEAD
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -52,85 +51,3 @@
   margin-top: 50px;
   padding: 250px;
 }
-=======
-   display: flex;
-   justify-content: center;
-   flex-wrap: wrap;
-   width: 100%;
-   text-align: center;
-   align-items: center;
-   padding: 10px;
-   gap: 2rem;
-}
-
-.itens {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   width: 28rem;
-   height: 50rem;
-   padding: 10px;
-   box-shadow: 1px 1px 10px 5px #ddd;
-   border-radius: 6px;
-   background-image: linear-gradient(#ffffffd9, #ffffff8f, #a8a8a8);
-}
-
-.itens img {
-   width: 14rem;
-   height: 15rem;
-}
-
-.itens h2 {
-   display: flex;
-   text-align: center;
-   align-items: center;
-   margin: 1.5rem 0;
-   font-size: 24px;
-   color: #2d7297;
-   height: 2rem;
-}
-
-.itens p {
-   display: flex;
-   align-items: center;
-   text-align: center;
-   margin-bottom: 1rem;
-   color: #6d94a3fd;
-   height: 4rem;
-}
-
-.itens h3 {
-   display: flex;
-   align-items: center;
-   text-align: center;
-   margin-bottom: 1rem;
-   color: #091238;
-   height: 2rem;
-   font-size: 26px;
-}
-
-.itens h4 {
-   font-size: 22px;
-   color: #2d7297;
-   height: 2rem;
-}
-.avaliacoes {
-   display: flex;
-   gap: 1rem;
-   margin: 1rem 0;
-}
-
-.avaliacoes span {
-   display: flex;
-   align-self: center;
-   text-align: center;
-}
-
-.avaliacoes h5 {
-   font-size: 20px;
-   margin-left: 5px;
-}
-
-
->>>>>>> ba5e0b747b464fe918703d36eb392acc10fd9f3e
