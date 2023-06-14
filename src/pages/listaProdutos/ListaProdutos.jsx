@@ -54,7 +54,6 @@ const ListaProdutos = () => {
             <div className={styles.card}>
                {data.map((item, index) => {
                   item.quantidade = 1
-<<<<<<< HEAD
                   return (
                      <div key={index} className={styles.itens}>
                         <img
@@ -96,84 +95,6 @@ const ListaProdutos = () => {
                      </div>
                      
                   )
-=======
-                  {
-                     if (item.amount > 0) {
-                        return (
-                           <div key={index} className={styles.itens}>
-                              <img
-                                 src={item.image}
-                                 alt={item.description}
-                                 width={150}
-                              />
-                              <h2>{item.title}</h2>
-                              <p>
-                                 {item.description.length > 150
-                                    ? item.description.substring(0, 150) + '...'
-                                    : item.description}
-                              </p>
-                              <h3>R$ {item.price}</h3>
-                              <h4>
-                                 Avaliações <br />
-                                 {token == null ? (
-                                    <div className={styles.avaliacoes}>
-                                       <button
-                                          onClick={() =>
-                                             incrementarFeedbackPositivo(index)
-                                          }
-                                          disabled
-                                       >
-                                          <BsHandThumbsUp />
-                                          {item.feedbacksPositivos}
-                                       </button>
-                                       <br />
-                                       <button
-                                          onClick={() =>
-                                             decrementarFeedbackPositivo(index)
-                                          }
-                                          disabled
-                                       >
-                                          <BsHandThumbsDown />
-                                          {item.feedbacksNegativos}
-                                       </button>
-                                    </div>
-                                 ) : (
-                                    <div className={styles.avaliacoes}>
-                                       <button
-                                          onClick={() =>
-                                             incrementarFeedbackPositivo(index)
-                                          }
-                                       >
-                                          <BsHandThumbsUp />
-                                          {item.feedbacksPositivos}
-                                       </button>
-                                       <br />
-                                       <button
-                                          onClick={() =>
-                                             decrementarFeedbackPositivo(index)
-                                          }
-                                       >
-                                          <BsHandThumbsDown />
-                                          {item.feedbacksNegativos}
-                                       </button>
-                                    </div>
-                                 )}
-                              </h4>
-                              <Link to={`/detalheProduto/${item.id}`}>
-                                 <button>Ver mais</button>
-                              </Link>
-                              <button
-                                 onClick={() =>
-                                    dispatch({ type: 'ADD', payload: item })
-                                 }
-                              >
-                                 Adicionar carrinho
-                              </button>
-                           </div>
-                        )
-                     }
-                  }
->>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
                })}
             </div>
          </div>

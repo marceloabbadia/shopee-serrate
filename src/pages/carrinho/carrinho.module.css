@@ -14,7 +14,6 @@
    font-size: 20px;
 }
 
-<<<<<<< HEAD
 
 .carrinho .card {
    display: flex;
@@ -25,13 +24,6 @@
     border-color:  purple #3b32a1 purple #3b32a1;
     padding: 20px;
     
-=======
-.card {
-   display: flex;
-   justify-content: space-between;
-   border-bottom: 1px solid rgba(0, 0, 0, 0.219);
-   padding-bottom: 20px;
->>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
 }
 
 .card img {
@@ -60,7 +52,6 @@
 
 .total {
    text-align: right;
-<<<<<<< HEAD
    border-top: 0.5px solid ;
    border-color:  purple  #3b32a1 blueviolet;
    font-size: 1rem;
@@ -69,17 +60,4 @@
 
 .retorno {
    margin: 1% 1%;
-=======
-}
-
-.tabela {
-   display: flex;
-   justify-content: space-between;
-   margin-right: 150px;
-}
-
-.btn_compra {
-   display: flex;
-   margin-left: auto;
->>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
 }

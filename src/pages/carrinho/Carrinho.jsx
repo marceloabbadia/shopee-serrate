@@ -1,21 +1,14 @@
-import { useContext, React, useState, useEffect } from 'react'
+import { useContext, React, useState } from 'react'
 import styles from './carrinho.module.css'
 import { CarrinhoContext } from '../../context/Context'
-<<<<<<< HEAD
-import { ButtonGroup, Button, IconButton } from '@mui/material'
-import ControlPointIcon from '@mui/icons-material/ControlPoint';
-import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
-import LocalAtmIcon from '@mui/icons-material/LocalAtm';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { Link, useParams } from 'react-router-dom'
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-
-
-=======
-import { Box, Button, Modal, Typography } from '@mui/material'
+import { Box, Button, IconButton, Modal, Typography } from '@mui/material'
 import { Link } from 'react-router-dom'
 import api from '../../api/api'
->>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline'
+import HighlightOffIcon from '@mui/icons-material/HighlightOff'
+import LocalAtmIcon from '@mui/icons-material/LocalAtm'
+import ControlPointIcon from '@mui/icons-material/ControlPoint'
 
 const Carrinho = () => {
    const GlobalState = useContext(CarrinhoContext)
@@ -60,7 +53,12 @@ const Carrinho = () => {
       <>
          <div className={styles.retorno}>
             <Link to="/">
-               <Button variant="contained" size="larger" color="secondary" startIcon={<ArrowCircleLeftIcon sx={{ fontSize: 40 }} />}>
+               <Button
+                  variant="contained"
+                  size="larger"
+                  color="secondary"
+                  startIcon={<ArrowCircleLeftIcon sx={{ fontSize: 40 }} />}
+               >
                   RETORNAR
                </Button>
             </Link>
@@ -76,56 +74,48 @@ const Carrinho = () => {
             {state.map((item, index) => {
                return (
                   <div key={index} className={styles.card}>
-
                      <img src={item.image} alt="" />
                      <p>{item.title}</p>
                      <p>R$ {item.quantidade * item.price}</p>
-<<<<<<< HEAD
-                     <div className={styles.quantidade}>
-                        <IconButton color="success" aria-label="add to shopping cart"
-                           onClick={() =>
-                              dispatch({ type: 'INCREASE', payload: item })
-                           }>
-                           <ControlPointIcon />
-                        </IconButton>
-=======
                      <p>{item.amount} Un</p>
                      <div className={styles.quantidade}>
                         {item.quantidade < item.amount ? (
-                           <button
+                           <IconButton
+                              color="success"
+                              aria-label="add to shopping cart"
                               onClick={() =>
                                  dispatch({ type: 'INCREASE', payload: item })
                               }
                            >
-                              +
-                           </button>
+                              <ControlPointIcon />
+                           </IconButton>
                         ) : (
                            <button disabled>+</button>
                         )}
 
->>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
                         <p>{item.quantidade}</p>
-                        <IconButton color="error" aria-label="add to shopping cart"
+                        <IconButton
+                           color="error"
+                           aria-label="add to shopping cart"
                            onClick={() => {
                               if (item.quantidade > 1) {
                                  dispatch({ type: 'DECREASE', payload: item })
                               } else {
                                  dispatch({ type: 'REMOVE', payload: item })
                               }
-                           }}>
+                           }}
+                        >
                            <RemoveCircleOutlineIcon />
                         </IconButton>
                      </div>
-<<<<<<< HEAD
-                     <IconButton color="error" aria-label="remover"
-=======
-
-                     <h2
->>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
+                     <IconButton
+                        color="error"
+                        aria-label="remover"
                         className={styles.btn_remove}
                         onClick={() =>
                            dispatch({ type: 'REMOVE', payload: item })
-                        }>
+                        }
+                     >
                         <HighlightOffIcon />
                      </IconButton>
                   </div>

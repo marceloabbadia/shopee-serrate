@@ -6,11 +6,10 @@ import { CircularProgress } from '@mui/material'
 import { BsHandThumbsDown, BsHandThumbsUp } from 'react-icons/bs'
 import { CarrinhoContext } from '../../context/Context'
 import { ButtonGroup, Button, IconButton } from '@mui/material'
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import ThumbDownIcon from '@mui/icons-material/ThumbDown';
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
+import ThumbUpIcon from '@mui/icons-material/ThumbUp'
+import ThumbDownIcon from '@mui/icons-material/ThumbDown'
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
 
 const DetalheProduto = () => {
    const [produto, setProduto] = useState({})
@@ -62,11 +61,15 @@ const DetalheProduto = () => {
                }}
             />
          )}
-<<<<<<< HEAD
          <div className={styles.paginatoda}>
             <div className={styles.retorno}>
                <Link to="/">
-                  <Button variant="contained" size="larger" color="secondary" startIcon={<ArrowCircleLeftIcon sx={{ fontSize: 40 }} />}>
+                  <Button
+                     variant="contained"
+                     size="larger"
+                     color="secondary"
+                     startIcon={<ArrowCircleLeftIcon sx={{ fontSize: 40 }} />}
+                  >
                      RETORNAR
                   </Button>
                </Link>
@@ -84,25 +87,6 @@ const DetalheProduto = () => {
                      <p>{produto.description}</p>
                      <h3>{produto.category}</h3>
                      <h4>Quantidade: {produto.amount}</h4>
-=======
-         <Link to="/">
-            <button className={styles.btn_voltar}>voltar</button>
-         </Link>
-         <div className="container">
-            <div className={styles.produto}>
-               <div className={styles.info}>
-                  <img
-                     src={produto.image}
-                     alt={produto.description}
-                     width={200}
-                  />
-                  <h2>{produto.title}</h2>
-                  <strong>R$: {produto.price}</strong>
-                  <p>{produto.description}</p>
-                  <h3>{produto.category}</h3>
-                  <h4>Quantidade: {produto.amount}</h4>
->>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
-
 
                      <div className={styles.avaliacoes}>
                         <ThumbUpIcon color="success" />
@@ -110,8 +94,12 @@ const DetalheProduto = () => {
                         <ThumbDownIcon color="error" />
                         <p>{produto.feedbacksNegativos}</p>
                      </div>
-                     <Button variant="outlined" startIcon={<AddShoppingCartIcon />}
-                        onClick={() => dispatch({ type: 'ADD', payload: produto })}
+                     <Button
+                        variant="outlined"
+                        startIcon={<AddShoppingCartIcon />}
+                        onClick={() =>
+                           dispatch({ type: 'ADD', payload: produto })
+                        }
                      >
                         ADICIONAR AO CARRINHO
                      </Button>
@@ -119,57 +107,40 @@ const DetalheProduto = () => {
                </div>
             </div>
 
-<<<<<<< HEAD
+            <div className={styles.barra}>
+               {' '}
+               Vejam também nossos produtos relacionados
+            </div>
+
             <div className={styles.relacionados}>
                {relacionados.map((item, index) => {
-                  return (
-                     <div key={index} className={styles.cards_relacionados}>
-                        <Link to={`/detalheProduto/${item.id}`} reloadDocument>
-                           <img
-                              src={item.image}
-                              alt={item.description}
-                              width={90}
-                           />
-                           <p>{item.title}</p>
-                           <h2>R${item.price}</h2>
-                        </Link>
-                     </div>
-                  )
+                  {
+                     if (item.amount > 0) {
+                        return (
+                           <div
+                              key={index}
+                              className={styles.cards_relacionados}
+                           >
+                              <Link
+                                 to={`/detalheProduto/${item.id}`}
+                                 reloadDocument
+                              >
+                                 <img
+                                    src={item.image}
+                                    alt={item.description}
+                                    width={100}
+                                 />
+                                 <p>{item.title}</p>
+                                 <h2>R${item.price}</h2>
+                              </Link>
+                           </div>
+                        )
+                     }
+                  }
                })}
             </div>
-=======
-         <div className={styles.barra}>
-            {' '}
-            Vejam também nossos produtos relacionados
-         </div>
-
-         <div className={styles.relacionados}>
-            {relacionados.map((item, index) => {
-               {
-                  if (item.amount > 0) {
-                     return (
-                        <div key={index} className={styles.cards_relacionados}>
-                           <Link
-                              to={`/detalheProduto/${item.id}`}
-                              reloadDocument
-                           >
-                              <img
-                                 src={item.image}
-                                 alt={item.description}
-                                 width={100}
-                              />
-                              <p>{item.title}</p>
-                              <h2>R${item.price}</h2>
-                           </Link>
-                        </div>
-                     )
-                  }
-               }
-            })}
->>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
          </div>
       </>
    )
 }
-
 export default DetalheProduto
