@@ -1,17 +1,17 @@
 .header {
-   background-color: #0f0f0f;
-   width: 100vw;
-   height: 8rem;
-   color: rgb(255, 255, 255);
+  background-color: #0f0f0f;
+  width: 100vw;
+  height: 8rem;
+  color: rgb(255, 255, 255);
 }
 
 .nav {
-   display: flex;
-   justify-content: space-around;
-   align-items: center;
-   text-align: center;
-   height: 100%;
-   padding: 0 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  padding: 0 3rem;
 }
 
 .botoes_header {
@@ -19,49 +19,48 @@
 }
 
 .title h1 {
-   color: white;
+  color: white;
 }
 
 .pesquisa_nome {
-   display: flex;
-   align-items: center;
-   border: none;
+  display: flex;
+  align-items: center;
+  border: none;
 }
 
 .btn_carrinho {
-   font-size: 40px;
-   color: rgb(0, 42, 255);
-   transition: 0.2s all;
+  font-size: 40px;
+  color: rgb(0, 42, 255);
+  transition: 0.2s all;
 }
 
 .btn_carrinho:hover {
-   color: #ddd;
+  color: #ddd;
 }
 
 .btn_clear {
-   font-size: 40px;
-   color: #a10d0d;
-   transition: 0.2s all;
-   margin-left: 5px;
+  font-size: 40px;
+  color: #a10d0d;
+  transition: 0.2s all;
+  margin-left: 5px;
 }
 
 .btn_clear:hover {
-   color: #ddd;
+  color: #ddd;
 }
 
 .btn_login {
-   font-size: 40px;
-   color: #ddd;
-   transition: 0.2s all;
+  font-size: 40px;
+  color: #ddd;
+  transition: 0.2s all;
 }
 
 .btn_login:hover {
-   color: #dddddd83;
+  color: #dddddd83;
 }
 
 .btn {
-   display: flex;
-   gap: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
-
-
