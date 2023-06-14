@@ -1,5 +1,5 @@
 .header {
-   background-color: rgb(0, 2, 7);
+   background-color: #0f0f0f;
    width: 100vw;
    height: 8rem;
    color: rgb(255, 255, 255);
@@ -11,44 +11,55 @@
    align-items: center;
    text-align: center;
    height: 100%;
+   padding: 0 3rem;
 }
 
 .botoes_header {
    padding: 15px;
 }
 
-.btn_clear {
-   width: 30px;
-   height: 30px;
-   color: rgb(255, 0, 0);
-   background-color: rgb(254, 254, 255);
-   border-color: rgb(255, 255, 255);
-}
-
-h1 {
-   color: rgb(255, 255, 255);
+.title h1 {
+   color: white;
 }
 
 .pesquisa_nome {
    display: flex;
-   gap: 10px;
    align-items: center;
    border: none;
 }
 
-
 .btn_carrinho {
-   width: 35px;
-   height: 35px;
+   font-size: 40px;
    color: rgb(0, 42, 255);
-   background-color: rgb(255, 255, 255);
-   border-color: rgb(255, 255, 255);
+   transition: 0.2s all;
+}
+
+.btn_carrinho:hover {
+   color: #ddd;
+}
+
+.btn_clear {
+   font-size: 40px;
+   color: #a10d0d;
+   transition: 0.2s all;
+   margin-left: 5px;
+}
+
+.btn_clear:hover {
+   color: #ddd;
 }
 
 .btn_login {
-   width: 35px;
-   height: 35px;
-   color: rgb(0, 0, 0);
-   background-color: rgb(255, 255, 255);
-   border-color: rgb(255, 255, 255);
+   font-size: 40px;
+   color: #ddd;
+   transition: 0.2s all;
+}
+
+.btn_login:hover {
+   color: #dddddd83;
+}
+
+.btn {
+   display: flex;
+   gap: 1rem;
 }

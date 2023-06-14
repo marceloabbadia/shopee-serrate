@@ -1,5 +1,5 @@
 import styles from "./footer.module.css";
-import { FaFacebook, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaFacebook, FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -15,6 +15,9 @@ const Footer = () => {
         </li>
         <li>
           <FaLinkedin />
+        </li>
+        <li>
+          <FaGithub/>
         </li>
       </ul>
     </div>

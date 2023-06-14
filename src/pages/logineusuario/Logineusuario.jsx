@@ -133,64 +133,7 @@ const LoginEUsuario = () => {
         Senha: senha,
       });
 
-<<<<<<< HEAD
-   return (
-      <>
-         <div className={styles.container_geral}>
-            <div className={styles.barra_central}></div>
-            <div className={styles.login1}>
-               <h2>Já Sou Cliente</h2>
-               <br />
-               <form
-                  className={styles.form_login}
-                  onSubmit={handleSubmitFormLogin}
-               >
-                  <TextField
-                     required
-                     id="outlined-required"
-                     label="Email"
-                     value={emailLogin}
-                     onChange={handleChangeEmailLogin}
-                  />
-                  <br />
-                  <br />
-                  <FormControl sx={{ m: 1, width: '22ch' }} variant="outlined">
-                     <InputLabel htmlFor="outlined-adornment-password">
-                        Senha
-                     </InputLabel>
-                     <OutlinedInput
-                        value={senhaLogin}
-                        onChange={handleChangeSenhaLogin}
-                        id="outlined-adornment-password"
-                        type={showPassword ? 'text' : 'password'}
-                        endAdornment={
-                           <InputAdornment position="end">
-                              <IconButton
-                                 aria-label="toggle password visibility"
-                                 onClick={handleClickShowPassword}
-                                 edge="end"
-                              >
-                                 {showPassword ? (
-                                    <VisibilityOff />
-                                 ) : (
-                                    <Visibility />
-                                 )}
-                              </IconButton>
-                           </InputAdornment>
-                        }
-                        label="Password"
-                     />
-                  </FormControl>
-                  <br />
-                  <br />
-                  {/* <Link to="/"> */}
-                  <Button variant="contained" type="submit">
-                     Entrar
-                  </Button>
-                  {/* </Link> */}
-=======
       localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
->>>>>>> a2175803163505916a45f5c268162d2f05f37b9f
 
       alert("Usuario cadastrado com sucesso!");
 

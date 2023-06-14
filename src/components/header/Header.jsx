@@ -10,74 +10,77 @@ import Box from '@mui/material/Box'
 import PesquisaContext from '../../context/PesquisaContext'
 
 const Header = () => {
-  const { searchValue, setSearchValue } = useContext(PesquisaContext);
-  const token = localStorage.getItem("token");
+   const { searchValue, setSearchValue } = useContext(PesquisaContext)
+   const token = localStorage.getItem('token')
 
    const handleSearch = event => {
       event.preventDefault()
       setSearchValue('')
    }
 
-  const handleClickCarrinho = () => {
-    if (!token) {
-      alert("Por favor, faça login para adicionar ao carrinho.");
-    }
-  };
+   const handleClickCarrinho = () => {
+      if (!token) {
+         alert('Por favor, faça login para adicionar ao carrinho.')
+      }
+   }
 
-  return (
-    <>
-      <div className={styles.header}>
-        <nav className={styles.nav}>
-          <div className={styles.title}>
-            <Link to={"/"}>
-              <h1>SHOPEE SERRATEC</h1>
-            </Link>
-          </div>
+   return (
+      <>
+         <div className={styles.header}>
+            <nav className={styles.nav}>
+               <div className={styles.title}>
+                  <Link
+                     to={'/'}
+                     style={{ fontSize: '22px', textDecoration: 'none' }}
+                  >
+                     <h1>SHOPEE SERRATEC</h1>
+                  </Link>
+               </div>
 
-          <form className={styles.pesquisa_nome} onSubmit={handleSearch}>
-            <Box
-              sx={{
-                width: 500,
-                maxWidth: "90%",
-                bgcolor: "white",
-                boxShadow: 1,
-                borderRadius: 5,
-              }}
-            >
-              <TextField
-                fullWidth
-                value={searchValue}
-                label="Pesquisar por nome"
-                onChange={({ target }) => setSearchValue(target.value)}
-              />
-            </Box>
-            <Link to={"/"}>
-              <button
-                onClick={() => {
-                  setSearchValue("");
-                }}
-              >
-                <AiOutlineClear className={styles.btn_clear} />
-              </button>
-            </Link>
-          </form>
-          <Link
-            to={token ? "/carrinho" : "/"}
-            disabled={!token}
-            onClick={handleClickCarrinho}
-          >
-            <button className={styles.btn_carrinho}>
-              <BsCart3 />
-            </button>
-          </Link>
-          <br />
-          <Link to="/login">
-            <button className={styles.btn_login}>
-              <RiLoginBoxLine />
-            </button>
-          </Link>
-
-               <br />
+               <form className={styles.pesquisa_nome} onSubmit={handleSearch}>
+                  <Box
+                     sx={{
+                        width: 500,
+                        maxWidth: '90%',
+                        bgcolor: 'white',
+                        boxShadow: 1,
+                        borderRadius: 5
+                     }}
+                  >
+                     <TextField
+                        fullWidth
+                        value={searchValue}
+                        placeholder="Pesquisar por nome"
+                        onChange={({ target }) => setSearchValue(target.value)}
+                     />
+                  </Box>
+                  <Link to={'/'}>
+                     <h3
+                        onClick={() => {
+                           setSearchValue('')
+                        }}
+                     >
+                        <AiOutlineClear className={styles.btn_clear} />
+                     </h3>
+                  </Link>
+               </form>
+               <div className={styles.btn}>
+                  <Link
+                     to={token ? '/carrinho' : '/'}
+                     disabled={!token}
+                     onClick={handleClickCarrinho}
+                  >
+                     <h3 className={styles.btn_carrinho}>
+                        <BsCart3 />
+                     </h3>
+                  </Link>
+                  <br />
+                  <Link to="/login">
+                     <h3 className={styles.btn_login}>
+                        <RiLoginBoxLine />
+                     </h3>
+                  </Link>
+               </div>
             </nav>
          </div>
       </>

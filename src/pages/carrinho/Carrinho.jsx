@@ -90,7 +90,9 @@ const Carrinho = () => {
                               <ControlPointIcon />
                            </IconButton>
                         ) : (
-                           <button disabled>+</button>
+                           <IconButton disabled>
+                              <ControlPointIcon />
+                           </IconButton>
                         )}
 
                         <p>{item.quantidade}</p>
