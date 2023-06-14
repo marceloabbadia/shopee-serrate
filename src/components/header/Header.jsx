@@ -2,19 +2,23 @@ import styles from "./header.module.css";
 import React from "react";
 import { Link } from "react-router-dom";
 import { BsSearch, BsCart3 } from "react-icons/bs";
-import { useState } from "react";
+import { RiLoginBoxLine } from "react-icons/ri";
+import { AiOutlineClear } from "react-icons/ai";
+import { useState, useContext } from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
 import Box from "@mui/material/Box";
 import api from "../../api/api";
+import PesquisaContext from "../../context/PesquisaContext";
+import { borderRadius } from "@mui/system";
 
 const Header = () => {
-  const [searchValue, setSearchValue] = useState("");
+  const { searchValue, setSearchValue } = useContext(PesquisaContext);
+  // const [searchValue, setSearchValue] = useState("");
 
-  const handleSearch = async (event) => {
+  const handleSearch = (event) => {
     event.preventDefault();
-    const response = await api.get(`/produtos?title=${searchValue}`);
-    setSearchValue(response.data);
+    setSearchValue("");
   };
 
   const pesquisaMenu = [
@@ -38,10 +42,10 @@ const Header = () => {
             <Box
               sx={{
                 width: 500,
-                maxWidth: "80%",
+                maxWidth: "90%",
                 bgcolor: "white",
                 boxShadow: 1,
-                borderRadius: 3,
+                borderRadius: 5,
               }}
             >
               <TextField
@@ -51,30 +55,19 @@ const Header = () => {
                 onChange={({ target }) => setSearchValue(target.value)}
               />
             </Box>
-            <button type="submit">
-              <BsSearch />
-            </button>
+            <Link to={"/"}>
+              <button
+                onClick={() => {
+                  setSearchValue("");
+                }}
+              >
+                <AiOutlineClear className={styles.btn_clear} />
+              </button>
+            </Link>
           </form>
 
-          <div className={styles.pesquisa_categoria}>
-            <Autocomplete
-              disablePortal
-              id="combo-box-demo"
-              options={pesquisaMenu}
-              sx={{
-                width: 250,
-                bgcolor: "white",
-                boxShadow: 1,
-                borderRadius: 3,
-              }}
-              renderInput={(params) => (
-                <TextField {...params} label="Pesquisar Categoria" />
-              )}
-            />
-          </div>
-
           <Link to="/carrinho">
-            <button>
+            <button className={styles.btn_carrinho}>
               <BsCart3 />
             </button>
           </Link>
@@ -82,7 +75,9 @@ const Header = () => {
           <br />
 
           <Link to="/login">
-            <button>Login </button>
+            <button className={styles.btn_login}>
+              <RiLoginBoxLine />
+            </button>
           </Link>
 
           <br />
