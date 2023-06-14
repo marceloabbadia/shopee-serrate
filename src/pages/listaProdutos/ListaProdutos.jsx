@@ -4,6 +4,17 @@ import styles from './listaProdutos.module.css'
 import { Link } from 'react-router-dom'
 import { BsHandThumbsDown, BsHandThumbsUp } from 'react-icons/bs'
 import { CarrinhoContext } from '../../context/Context'
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import { ButtonGroup, Button } from '@mui/material'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import Checkbox from '@mui/material/Checkbox';
+import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
+import Favorite from '@mui/icons-material/Favorite';
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkIcon from '@mui/icons-material/Bookmark';
+
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const ListaProdutos = () => {
    const [data, setData] = useState([])
@@ -22,6 +33,9 @@ const ListaProdutos = () => {
 
    return (
       <>
+         <div className={styles.tudo}>
+            
+         </div>
          <div className={styles.container}>
             <div className={styles.card}>
                {data.map((item, index) => {
@@ -31,7 +45,7 @@ const ListaProdutos = () => {
                         <img
                            src={item.image}
                            alt={item.description}
-                           width={150}
+                           width={80}
                         />
                         <h2>{item.title}</h2>
                         <p>
@@ -44,25 +58,28 @@ const ListaProdutos = () => {
                            Avaliações <br />
                            <div className={styles.avaliacoes}>
                               <strong>
-                                 <BsHandThumbsUp /> {item.feedbacksPositivos}
+                                 <ThumbUpIcon color="success" /> {item.feedbacksPositivos}
                               </strong>
                               <br />
                               <strong>
-                                 <BsHandThumbsDown /> {item.feedbacksNegativos}
+                                 <ThumbDownIcon color="error" /> {item.feedbacksNegativos}
                               </strong>
                            </div>
                         </h4>
                         <Link to={`/detalheProduto/${item.id}`}>
-                           <button>Ver mais</button>
+                           <Button variant="outlined">VER MAIS</Button>
+
                         </Link>
-                        <button
+                        <p>⠀⠀</p>
+                        <Button className="vermais" variant="contained" endIcon={<AddShoppingCartIcon />}
                            onClick={() =>
                               dispatch({ type: 'ADD', payload: item })
-                           }
-                        >
-                           Adicionar carrinho
-                        </button>
+                           }>Adicionar ao carrinho</Button>
+                        <div className={styles.favorito}>
+                        <Checkbox {...label} icon={<FavoriteBorder />} checkedIcon={<Favorite color="error" />} />
+                        </div>
                      </div>
+                     
                   )
                })}
             </div>

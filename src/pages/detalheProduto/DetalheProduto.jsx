@@ -5,6 +5,12 @@ import styles from './detalheProduto.module.css'
 import { CircularProgress } from '@mui/material'
 import { BsHandThumbsDown, BsHandThumbsUp } from 'react-icons/bs'
 import { CarrinhoContext } from '../../context/Context'
+import { ButtonGroup, Button, IconButton } from '@mui/material'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbDownIcon from '@mui/icons-material/ThumbDown';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+
 
 const DetalheProduto = () => {
    const [produto, setProduto] = useState({})
@@ -58,55 +64,61 @@ const DetalheProduto = () => {
                }}
             />
          )}
-         <Link to="/">
-            <button>voltar</button>
-         </Link>
-         <div className="container">
-            {(produto.quantidade = 1)}
-            <div className={styles.produto}>
-               <div className={styles.info}>
-                  <img
-                     src={produto.image}
-                     alt={produto.description}
-                     width={200}
-                  />
-                  <h2>{produto.title}</h2>
-                  <strong>R$: {produto.price}</strong>
-                  <p>{produto.description}</p>
-                  <h3>{produto.category}</h3>
-                  <h4>Quantidade: {produto.amount}</h4>
+         <div className={styles.paginatoda}>
+            <div className={styles.retorno}>
+               <Link to="/">
+                  <Button variant="contained" size="larger" color="secondary" startIcon={<ArrowCircleLeftIcon sx={{ fontSize: 40 }} />}>
+                     RETORNAR
+                  </Button>
+               </Link>
+            </div>
+            <div className="container">
+               <div className={styles.produto}>
+                  <div className={styles.info}>
+                     <img
+                        src={produto.image}
+                        alt={produto.description}
+                        width={100}
+                     />
+                     <h2>{produto.title}</h2>
+                     <strong>R$: {produto.price}</strong>
+                     <p>{produto.description}</p>
+                     <h3>{produto.category}</h3>
+                     <h4>Quantidade: {produto.amount}</h4>
 
-                  <div className={styles.avaliacoes}>
-                     <BsHandThumbsUp />
-                     <p>{produto.feedbacksPositivos}</p>
-                     <BsHandThumbsDown />
-                     <p>{produto.feedbacksNegativos}</p>
+
+                     <div className={styles.avaliacoes}>
+                        <ThumbUpIcon color="success" />
+                        <p>{produto.feedbacksPositivos}</p>
+                        <ThumbDownIcon color="error" />
+                        <p>{produto.feedbacksNegativos}</p>
+                     </div>
+                     <Button variant="outlined" startIcon={<AddShoppingCartIcon />}
+                        onClick={() => dispatch({ type: 'ADD', payload: produto })}
+                     >
+                        ADICIONAR AO CARRINHO
+                     </Button>
                   </div>
-                  <button
-                     onClick={() => dispatch({ type: 'ADD', payload: produto })}
-                  >
-                     Adicionar carrinho
-                  </button>
                </div>
             </div>
-         </div>
 
-         <div className={styles.relacionados}>
-            {relacionados.map((item, index) => {
-               return (
-                  <div key={index} className={styles.cards_relacionados}>
-                     <Link to={`/detalheProduto/${item.id}`} reloadDocument>
-                        <img
-                           src={item.image}
-                           alt={item.description}
-                           width={100}
-                        />
-                        <p>{item.title}</p>
-                        <h2>R${item.price}</h2>
-                     </Link>
-                  </div>
-               )
-            })}
+            <div className={styles.relacionados}>
+               {relacionados.map((item, index) => {
+                  return (
+                     <div key={index} className={styles.cards_relacionados}>
+                        <Link to={`/detalheProduto/${item.id}`} reloadDocument>
+                           <img
+                              src={item.image}
+                              alt={item.description}
+                              width={90}
+                           />
+                           <p>{item.title}</p>
+                           <h2>R${item.price}</h2>
+                        </Link>
+                     </div>
+                  )
+               })}
+            </div>
          </div>
       </>
    )

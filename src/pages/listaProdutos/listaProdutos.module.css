@@ -11,6 +11,13 @@
    align-items: center;
    padding: 10px;
    gap: 2rem;
+
+}
+
+
+.itens h2 {
+   margin-top: 20px;
+   font-size: 21px;
 }
 
 .itens {
@@ -23,9 +30,18 @@
    padding: 10px;
    box-shadow: 1px 1px 10px 5px #ddd;
    border-radius: 6px;
+   background-image: linear-gradient(#ffffffd9, #ffffff8f, #A8A8A8);
 }
+
 
 .avaliacoes {
    display: flex;
-   margin: 10px;
+   padding: 30px;
+   gap: 1rem;
+}
+
+.favorito {
+   float: right;
+   right: 0px;
+   padding: 10px;
 }

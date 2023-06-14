@@ -2,6 +2,7 @@ import styles from './header.module.css'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { BsSearch, BsCart3 } from 'react-icons/bs'
+import { AiOutlineUser } from "react-icons/ai";
 
 const Header = () => {
    const handleSearchBar = () => {
