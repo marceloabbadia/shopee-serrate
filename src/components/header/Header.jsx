@@ -23,15 +23,14 @@ const Header = () => {
    const handleLogout = () => {
       localStorage.removeItem('token')
       window.location.reload()
-      navigate('/')
    }
 
    const handleClickCarrinho = () => {
-      token = localStorage.getItem('token')
+      // token = localStorage.getItem('token')
       if (token == null) {
          alert('Por favor, faça login para adicionar ao carrinho.')
       }
-      navigate('/carrinho')
+      // navigate('/carrinho')
    }
 
    return (
@@ -75,11 +74,7 @@ const Header = () => {
                   </Link>
                </form>
                <div className={styles.btn}>
-                  <Link
-                     to={token ? '/carrinho' : '/'}
-                     disabled={!token}
-                     onClick={handleClickCarrinho}
-                  >
+                  <Link to={'/carrinho'}>
                      <h3 className={styles.btn_carrinho}>
                         <BsCart3 />
                      </h3>
