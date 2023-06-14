@@ -20,6 +20,7 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const ListaProdutos = () => {
   const [data, setData] = useState([]);
   const token = localStorage.getItem("token");
+  const [noItemsFound, setNoItemsFound] = useState(false);
 
   const { searchValue, setSearchValue } = useContext(PesquisaContext);
 
@@ -33,6 +34,12 @@ const ListaProdutos = () => {
       }
       const filteredData = filterData(response.data, searchValue);
       setData(filteredData);
+
+      if (filteredData.length === 0) {
+        setNoItemsFound(true);
+      } else {
+        setNoItemsFound(false);
+      }
     };
 
     fetchData();
@@ -60,11 +67,18 @@ const ListaProdutos = () => {
       setData(decrementar);
     }
   };
+
   const GlobalState = useContext(CarrinhoContext);
   const dispatch = GlobalState.dispatch;
 
   return (
     <>
+      {noItemsFound && (
+        <div className={styles.not_found}>
+          Nenhum item encontrado! Verifique o nome pesquisado e tente novamente.
+        </div>
+      )}
+
       <div className={styles.tudo}></div>
       <div className={styles.container}>
         <div className={styles.card}>
