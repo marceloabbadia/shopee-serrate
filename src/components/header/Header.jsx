@@ -8,6 +8,8 @@ import { useState, useContext } from 'react'
 import TextField from '@mui/material/TextField'
 import Box from '@mui/material/Box'
 import PesquisaContext from '../../context/PesquisaContext'
+import Stack from '@mui/material/Stack'
+import Button from '@mui/material/Button'
 
 const Header = () => {
    const { searchValue, setSearchValue } = useContext(PesquisaContext)
@@ -18,10 +20,18 @@ const Header = () => {
       setSearchValue('')
    }
 
+   const handleLogout = () => {
+      localStorage.removeItem('token')
+      window.location.reload()
+      navigate('/')
+   }
+
    const handleClickCarrinho = () => {
-      if (!token) {
+      token = localStorage.getItem('token')
+      if (token == null) {
          alert('Por favor, faça login para adicionar ao carrinho.')
       }
+      navigate('/carrinho')
    }
 
    return (
@@ -74,17 +84,65 @@ const Header = () => {
                         <BsCart3 />
                      </h3>
                   </Link>
-                  <br />
                   <Link to="/login">
-                     <h3 className={styles.btn_login}>
-                        <RiLoginBoxLine />
-                     </h3>
+                     <Button variant="text" className={styles.btn_login}>
+                        Login
+                     </Button>
                   </Link>
+
+                  <Button variant="text" color="error" onClick={handleLogout}>
+                     Logout
+                  </Button>
                </div>
             </nav>
          </div>
       </>
    )
 }
+//           <form className={styles.pesquisa_nome} onSubmit={handleSearch}>
+//             <Box
+//               sx={{
+//                 width: 500,
+//                 maxWidth: "90%",
+//                 bgcolor: "white",
+//                 boxShadow: 1,
+//                 borderRadius: 5,
+//               }}
+//             >
+//               <TextField
+//                 fullWidth
+//                 value={searchValue}
+//                 label="Pesquisar por nome"
+//                 onChange={({ target }) => setSearchValue(target.value)}
+//               />
+//             </Box>
+//             <Link to={"/"}>
+//               <button
+//                 onClick={() => {
+//                   setSearchValue("");
+//                 }}
+//               >
+//                 <AiOutlineClear className={styles.btn_clear} />
+//               </button>
+//             </Link>
+//           </form>
+//           <Link
+//             to={token ? "/carrinho" : "/"}
+//             disabled={!token}
+//             onClick={handleClickCarrinho}
+//           >
+//             <button className={styles.btn_carrinho}>
+//               <BsCart3 />
+//             </button>
+//           </Link>
+
+//           <br />
+
+//           <br />
+//         </nav>
+//       </div>
+//     </>
+//   );
+// };
 
 export default Header

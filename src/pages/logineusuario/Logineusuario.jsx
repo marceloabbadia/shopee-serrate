@@ -15,7 +15,6 @@ import { Link, useNavigate } from "react-router-dom";
 const LoginEUsuario = () => {
   const [emailLogin, setEmailLogin] = useState([]);
   const [senhaLogin, setSenhaLogin] = useState([]);
-  const [token, setToken] = useState(null);
   const navigate = useNavigate();
 
   const [nome, setNome] = useState([]);
@@ -72,8 +71,7 @@ const LoginEUsuario = () => {
     const newToken =
       Math.random().toString(16).substring(2) +
       Math.random().toString(16).substring(2);
-    setToken(newToken);
-    localStorage.setItem("token", token);
+    localStorage.setItem("token", newToken);
 
     alert("Seu token foi validado e voce será redirecionado!");
     resetarFormLogin();
@@ -280,7 +278,6 @@ const LoginEUsuario = () => {
             <br />
             <br />
             <Button variant="outlined" type="reset" onClick={resetarForm}>
-              {" "}
               Limpar
             </Button>
             <br />
