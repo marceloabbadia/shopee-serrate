@@ -17,25 +17,35 @@ const ListaProdutos = () => {
 
    const { searchValue, setSearchValue } = useContext(PesquisaContext)
 
-   useEffect(() => {
-      const data = async () => {
-         let response
-         if (searchValue === '') {
-            response = await api.get('/produtos')
-         } else {
-            response = await api.get(`/produtos?title=${searchValue}`)
-         }
-         setData(response.data)
+  useEffect(() => {
+    const fetchData = async () => {
+      let response;
+      if (searchValue === "") {
+        response = await api.get("/produtos");
+      } else {
+        response = await api.get("/produtos");
       }
+      const filteredData = filterData(response.data, searchValue);
+      setData(filteredData);
+    };
 
-      data()
-   }, [searchValue])
+    fetchData();
+  }, [searchValue]);
 
-   const incrementarFeedbackPositivo = index => {
-      const incrementar = [...data]
-      incrementar[index].feedbacksPositivos++
-      setData(incrementar)
-   }
+  const filterData = (products, search) => {
+    const filteredProducts = products.filter((produto) => {
+      const title = produto.title.toLowerCase();
+      const searchLower = search.toLowerCase();
+      return title.includes(searchLower);
+    });
+    return filteredProducts;
+  };
+
+  const incrementarFeedbackPositivo = (index) => {
+    const incrementar = [...data];
+    incrementar[index].feedbacksPositivos++;
+    setData(incrementar);
+  };
 
    const decrementarFeedbackPositivo = index => {
       const decrementar = [...data]
