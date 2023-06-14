@@ -11,10 +11,17 @@ import PesquisaContext from "../../context/PesquisaContext";
 
 const Header = () => {
   const { searchValue, setSearchValue } = useContext(PesquisaContext);
+  const token = localStorage.getItem("token");
 
   const handleSearch = (event) => {
     event.preventDefault();
     setSearchValue("");
+  };
+
+  const handleClickCarrinho = () => {
+    if (!token) {
+      alert("Por favor, faça login para adicionar ao carrinho.");
+    }
   };
 
   return (
@@ -54,7 +61,11 @@ const Header = () => {
               </button>
             </Link>
           </form>
-          <Link to="/carrinho">
+          <Link
+            to={token ? "/carrinho" : "/"}
+            disabled={!token}
+            onClick={handleClickCarrinho}
+          >
             <button className={styles.btn_carrinho}>
               <BsCart3 />
             </button>
