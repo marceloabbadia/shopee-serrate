@@ -1,142 +1,139 @@
-import React from 'react'
-import Button from '@mui/material/Button'
-import styles from './loginEUsuario.module.css'
-import IconButton from '@mui/material/IconButton'
-import OutlinedInput from '@mui/material/OutlinedInput'
-import InputLabel from '@mui/material/InputLabel'
-import InputAdornment from '@mui/material/InputAdornment'
-import FormControl from '@mui/material/FormControl'
-import TextField from '@mui/material/TextField'
-import Visibility from '@mui/icons-material/Visibility'
-import VisibilityOff from '@mui/icons-material/VisibilityOff'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import React from "react";
+import Button from "@mui/material/Button";
+import styles from "./loginEUsuario.module.css";
+import IconButton from "@mui/material/IconButton";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormControl from "@mui/material/FormControl";
+import TextField from "@mui/material/TextField";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginEUsuario = () => {
-   const [emailLogin, setEmailLogin] = useState([])
-   const [senhaLogin, setSenhaLogin] = useState([])
+  const [emailLogin, setEmailLogin] = useState([]);
+  const [senhaLogin, setSenhaLogin] = useState([]);
+  const [token, setToken] = useState(null);
+  const navigate = useNavigate();
 
-   const [nome, setNome] = useState([])
-   const [telefone, setTelefone] = useState([])
-   const [email, setEmail] = useState([])
-   const [senha, setSenha] = useState([])
+  const [nome, setNome] = useState([]);
+  const [telefone, setTelefone] = useState([]);
+  const [email, setEmail] = useState([]);
+  const [senha, setSenha] = useState([]);
 
-   const [showPassword, setShowPassword] = React.useState(false)
+  const [showPassword, setShowPassword] = React.useState(false);
 
-   const handleClickShowPassword = () => setShowPassword(show => !show)
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
-   const handleChangeEmailLogin = e => {
-      setEmailLogin(e.target.value)
-   }
+  const handleChangeEmailLogin = (e) => {
+    setEmailLogin(e.target.value);
+  };
 
-   const handleChangeSenhaLogin = e => {
-      setSenhaLogin(e.target.value)
-   }
+  const handleChangeSenhaLogin = (e) => {
+    setSenhaLogin(e.target.value);
+  };
 
-   const handleSubmitFormLogin = e => {
-      e.preventDefault()
+  const handleSubmitFormLogin = (e) => {
+    e.preventDefault();
 
-      let listaUsuarios = []
+    let listaUsuarios = [];
 
-      listaUsuarios = JSON.parse(localStorage.getItem('listaUsuarios'))
+    listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios"));
 
-      if (listaUsuarios === null) {
-         alert('Nenhum usuário ainda cadastrado!')
+    if (listaUsuarios === null) {
+      alert("Nenhum usuário ainda cadastrado!");
+    } else {
+      let userValid = {
+        email: "",
+        senha: "",
+      };
+
+      listaUsuarios.forEach((item) => {
+        if (emailLogin == item.Email && senhaLogin == item.Senha) {
+          userValid = {
+            email: item.email,
+            senha: item.senha,
+          };
+        }
+      });
+
+      if (userValid.email == "" || userValid.senha == "") {
+        alert("Senha ou login inválidos!");
+        resetarFormLogin();
       } else {
-         let userValid = {
-            email: '',
-            senha: ''
-         }
-
-         listaUsuarios.forEach(item => {
-            if (emailLogin == item.Email && senhaLogin == item.Senha) {
-               userValid = {
-                  email: item.email,
-                  senha: item.senha
-               }
-            }
-         })
-
-         if (userValid.email == '' || userValid.senha == '') {
-            alert('Senha ou login inválidos!')
-            resetarFormLogin()
-         } else {
-            let token =
-               Math.random().toString(16).substring(2) +
-               Math.random().toString(16).substring(2)
-            localStorage.setItem('token', token)
-            alert('Seu token foi validado e voce será redirecionado!')
-            resetarFormLogin()
-         }
+        handleButtonClick();
       }
-   }
+    }
+  };
 
-   const resetarFormLogin = () => {
-      setEmailLogin('')
-      setSenhaLogin('')
-   }
+  const handleButtonClick = () => {
+    const newToken =
+      Math.random().toString(16).substring(2) +
+      Math.random().toString(16).substring(2);
+    setToken(newToken);
+    localStorage.setItem("token", token);
 
-   const handleChangeNome = e => {
-      setNome(e.target.value)
-   }
+    alert("Seu token foi validado e voce será redirecionado!");
+    resetarFormLogin();
+    if (token) {
+      navigate("/");
+    }
+  };
 
-   const handleChangeTelefone = e => {
-      setTelefone(e.target.value)
-   }
+  const resetarFormLogin = () => {
+    setEmailLogin("");
+    setSenhaLogin("");
+  };
 
-   const handleChangeEmail = e => {
-      setEmail(e.target.value)
-   }
+  const handleChangeNome = (e) => {
+    setNome(e.target.value);
+  };
 
-   const handleChangeSenha = e => {
-      setSenha(e.target.value)
-   }
+  const handleChangeTelefone = (e) => {
+    setTelefone(e.target.value);
+  };
 
-   const handleSubmitForm = e => {
-      e.preventDefault()
+  const handleChangeEmail = (e) => {
+    setEmail(e.target.value);
+  };
 
-      let avaliacaoEmail
+  const handleChangeSenha = (e) => {
+    setSenha(e.target.value);
+  };
 
-      let listaUsuarios = JSON.parse(
-         localStorage.getItem('listaUsuarios') || '[]'
-      )
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
 
-      listaUsuarios.find(item => {
-         if (item.Email === email) {
-            avaliacaoEmail = false
-            return avaliacaoEmail
-         } else {
-            avaliacaoEmail = true
-            return avaliacaoEmail
-         }
-      })
+    let avaliacaoEmail;
 
-      if (avaliacaoEmail == false) {
-         alert('Email já cadastrado!')
-         resetarForm()
+    let listaUsuarios = JSON.parse(
+      localStorage.getItem("listaUsuarios") || "[]"
+    );
+
+    listaUsuarios.find((item) => {
+      if (item.Email === email) {
+        avaliacaoEmail = false;
+        return avaliacaoEmail;
       } else {
-         listaUsuarios.push({
-            Nome: nome,
-            Telefone: telefone,
-            Email: email,
-            Senha: senha
-         })
-
-         localStorage.setItem('listaUsuarios', JSON.stringify(listaUsuarios))
-
-         alert('Usuario cadastrado com sucesso!')
-
-         resetarForm()
+        avaliacaoEmail = true;
+        return avaliacaoEmail;
       }
-   }
+    });
 
-   const resetarForm = () => {
-      setNome('')
-      setTelefone('')
-      setEmail('')
-      setSenha('')
-   }
+    if (avaliacaoEmail == false) {
+      alert("Email já cadastrado!");
+      resetarForm();
+    } else {
+      listaUsuarios.push({
+        Nome: nome,
+        Telefone: telefone,
+        Email: email,
+        Senha: senha,
+      });
 
+<<<<<<< HEAD
    return (
       <>
          <div className={styles.container_geral}>
@@ -191,107 +188,168 @@ const LoginEUsuario = () => {
                      Entrar
                   </Button>
                   {/* </Link> */}
+=======
+      localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
+>>>>>>> a2175803163505916a45f5c268162d2f05f37b9f
 
-                  <p></p>
-                  <br />
+      alert("Usuario cadastrado com sucesso!");
 
-                  <Button
-                     variant="outlined"
-                     type="reset"
-                     onClick={resetarFormLogin}
-                  >
-                     Limpar
-                  </Button>
-                  <br />
-                  <br />
-                  <p className={styles.texto_login}>
-                     Faça login para receber mais ofertas
-                  </p>
-               </form>
-            </div>
+      resetarForm();
+    }
+  };
 
-            <div className={styles.cadastro1}>
-               <h2>Sou Novo Cliente</h2>
-               <br />
+  const resetarForm = () => {
+    setNome("");
+    setTelefone("");
+    setEmail("");
+    setSenha("");
+  };
 
-               <form onSubmit={handleSubmitForm}>
-                  <TextField
-                     required
-                     id="outlined-required"
-                     label="Nome"
-                     value={nome}
-                     onChange={handleChangeNome}
-                  />
-                  <br />
-                  <br />
-                  <TextField
-                     required
-                     id="outlined-required"
-                     label="Telefone"
-                     value={telefone}
-                     onChange={handleChangeTelefone}
-                     type="Number"
-                  />
-                  <br />
-                  <br />
-                  <TextField
-                     required
-                     id="outlined-required"
-                     label="Email"
-                     value={email}
-                     onChange={handleChangeEmail}
-                  />
-                  <br />
-                  <br />
-                  <FormControl sx={{ m: 1, width: '22ch' }} variant="outlined">
-                     <InputLabel htmlFor="outlined-adornment-password">
-                        Senha
-                     </InputLabel>
-                     <OutlinedInput
-                        value={senha}
-                        id="outlined-adornment-password"
-                        type={showPassword ? 'text' : 'password'}
-                        required
-                        onChange={handleChangeSenha}
-                        endAdornment={
-                           <InputAdornment position="end">
-                              <IconButton
-                                 aria-label="toggle password visibility"
-                                 onClick={handleClickShowPassword}
-                                 edge="end"
-                              >
-                                 {showPassword ? (
-                                    <VisibilityOff />
-                                 ) : (
-                                    <Visibility />
-                                 )}
-                              </IconButton>
-                           </InputAdornment>
-                        }
-                        label="Password"
-                     />
-                  </FormControl>
-                  <br />
-                  <br />
-                  <Button variant="contained" type="submit">
-                     Cadastrar
-                  </Button>
-                  <br />
-                  <br />
-                  <Button variant="outlined" type="reset" onClick={resetarForm}>
-                     {' '}
-                     Limpar
-                  </Button>
-                  <br />
-                  <br />
-                  <p className={styles.texto_login}>
-                     R$12 OFF na sua primeira compra
-                  </p>
-               </form>
-            </div>
-         </div>
-      </>
-   )
-}
+  return (
+    <>
+      <div className={styles.container_geral}>
+        <div className={styles.barra_central}></div>
+        <div className={styles.login1}>
+          <h2>Já Sou Cliente</h2>
+          <br />
+          <form className={styles.form_login} onSubmit={handleSubmitFormLogin}>
+            <TextField
+              required
+              id="outlined-required"
+              label="Email"
+              value={emailLogin}
+              onChange={handleChangeEmailLogin}
+            />
+            <br />
+            <br />
+            <FormControl sx={{ m: 1, width: "22ch" }} variant="outlined">
+              <InputLabel htmlFor="outlined-adornment-password">
+                Senha
+              </InputLabel>
+              <OutlinedInput
+                value={senhaLogin}
+                onChange={handleChangeSenhaLogin}
+                id="outlined-adornment-password"
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
+            </FormControl>
+            <br />
+            <br />
 
-export default LoginEUsuario
+            <Link to="/">
+              <Button
+                variant="contained"
+                type="submit"
+                onClick={handleButtonClick}
+              >
+                Entrar
+              </Button>
+            </Link>
+
+            <p></p>
+            <br />
+
+            <Button variant="outlined" type="reset" onClick={resetarFormLogin}>
+              Limpar
+            </Button>
+            <br />
+            <br />
+            <p className={styles.texto_login}>
+              Faça login para receber mais ofertas
+            </p>
+          </form>
+        </div>
+
+        <div className={styles.cadastro1}>
+          <h2>Sou Novo Cliente</h2>
+          <br />
+
+          <form onSubmit={handleSubmitForm}>
+            <TextField
+              required
+              id="outlined-required"
+              label="Nome"
+              value={nome}
+              onChange={handleChangeNome}
+            />
+            <br />
+            <br />
+            <TextField
+              required
+              id="outlined-required"
+              label="Telefone"
+              value={telefone}
+              onChange={handleChangeTelefone}
+              type="Number"
+            />
+            <br />
+            <br />
+            <TextField
+              required
+              id="outlined-required"
+              label="Email"
+              value={email}
+              onChange={handleChangeEmail}
+            />
+            <br />
+            <br />
+            <FormControl sx={{ m: 1, width: "22ch" }} variant="outlined">
+              <InputLabel htmlFor="outlined-adornment-password">
+                Senha
+              </InputLabel>
+              <OutlinedInput
+                value={senha}
+                id="outlined-adornment-password"
+                type={showPassword ? "text" : "password"}
+                required
+                onChange={handleChangeSenha}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      aria-label="toggle password visibility"
+                      onClick={handleClickShowPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+              />
+            </FormControl>
+            <br />
+            <br />
+            <Button variant="contained" type="submit">
+              Cadastrar
+            </Button>
+            <br />
+            <br />
+            <Button variant="outlined" type="reset" onClick={resetarForm}>
+              {" "}
+              Limpar
+            </Button>
+            <br />
+            <br />
+            <p className={styles.texto_login}>
+              R$12 OFF na sua primeira compra
+            </p>
+          </form>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default LoginEUsuario;

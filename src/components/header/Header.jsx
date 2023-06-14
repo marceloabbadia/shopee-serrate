@@ -10,68 +10,72 @@ import Box from '@mui/material/Box'
 import PesquisaContext from '../../context/PesquisaContext'
 
 const Header = () => {
-   const { searchValue, setSearchValue } = useContext(PesquisaContext)
+  const { searchValue, setSearchValue } = useContext(PesquisaContext);
+  const token = localStorage.getItem("token");
 
    const handleSearch = event => {
       event.preventDefault()
       setSearchValue('')
    }
 
-   return (
-      <>
-         <div className={styles.header}>
-            <nav className={styles.nav}>
-               <div className={styles.title}>
-                  <Link
-                     to={'/'}
-                     style={{
-                        textDecoration: 'none',
-                        fontSize: '24px',
-                        color: '#ddd'
-                     }}
-                  >
-                     <h1>SHOPEE SERRATEC</h1>
-                  </Link>
-               </div>
+  const handleClickCarrinho = () => {
+    if (!token) {
+      alert("Por favor, faça login para adicionar ao carrinho.");
+    }
+  };
 
-               <form className={styles.pesquisa_nome} onSubmit={handleSearch}>
-                  <Box
-                     sx={{
-                        width: 500,
-                        height: 50,
-                        bgcolor: 'white',
-                        boxShadow: 1,
-                        borderRadius: 9
-                     }}
-                  >
-                     <TextField
-                        fullWidth
-                        value={searchValue}
-                        placeholder="Pesquisar por nome"
-                        onChange={({ target }) => setSearchValue(target.value)}
-                     />
-                  </Box>
-                  <Link to={'/'}>
-                     <button
-                        onClick={() => {
-                           setSearchValue('')
-                        }}
-                     >
-                        <AiOutlineClear className={styles.btn_clear} />
-                     </button>
-                  </Link>
-               </form>
-               <Link to="/carrinho">
-                  <button className={styles.btn_carrinho}>
-                     <BsCart3 />
-                  </button>
-               </Link>
-               <br />
-               <Link to="/login">
-                  <button className={styles.btn_login}>
-                     <RiLoginBoxLine />
-                  </button>
-               </Link>
+  return (
+    <>
+      <div className={styles.header}>
+        <nav className={styles.nav}>
+          <div className={styles.title}>
+            <Link to={"/"}>
+              <h1>SHOPEE SERRATEC</h1>
+            </Link>
+          </div>
+
+          <form className={styles.pesquisa_nome} onSubmit={handleSearch}>
+            <Box
+              sx={{
+                width: 500,
+                maxWidth: "90%",
+                bgcolor: "white",
+                boxShadow: 1,
+                borderRadius: 5,
+              }}
+            >
+              <TextField
+                fullWidth
+                value={searchValue}
+                label="Pesquisar por nome"
+                onChange={({ target }) => setSearchValue(target.value)}
+              />
+            </Box>
+            <Link to={"/"}>
+              <button
+                onClick={() => {
+                  setSearchValue("");
+                }}
+              >
+                <AiOutlineClear className={styles.btn_clear} />
+              </button>
+            </Link>
+          </form>
+          <Link
+            to={token ? "/carrinho" : "/"}
+            disabled={!token}
+            onClick={handleClickCarrinho}
+          >
+            <button className={styles.btn_carrinho}>
+              <BsCart3 />
+            </button>
+          </Link>
+          <br />
+          <Link to="/login">
+            <button className={styles.btn_login}>
+              <RiLoginBoxLine />
+            </button>
+          </Link>
 
                <br />
             </nav>
