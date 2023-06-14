@@ -1,17 +1,17 @@
 ﻿# shopee-serratec
  
- ##Grupo 4
+ ## Grupo 4
  
- #Trabalho final do modulo React do curso SerraTec
+ # Trabalho final do modulo React do curso SerraTec
  
- Integrantes
+ ##Integrantes
  
- #Carlos Felipe Leopoldino da silva
+ # Carlos Felipe Leopoldino da silva
  <br/>
- #Marcelo Pinto Iria de Abbadia
+ # Marcelo Pinto Iria de Abbadia
  <br/>
- #Sheila Moraes
+ # Sheila Moraes
  <br/>
- #Maria Antônia
+ # Maria Antônia
  <br/>
- #Rodrigo Lisbôa
+ # Rodrigo Lisbôa
