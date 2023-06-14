@@ -76,10 +76,7 @@ const DetalheProduto = () => {
             <div className="container">
                <div className={styles.produto}>
                   <div className={styles.info}>
-                     <img
-                        src={produto.image}
-                        alt={produto.description}
-                     />
+                     <img src={produto.image} alt={produto.description} />
                      <h2>{produto.title}</h2>
                      <h3>R$: {produto.price}</h3>
                      <p>{produto.description}</p>
@@ -87,15 +84,15 @@ const DetalheProduto = () => {
                      <h4>Quantidade: {produto.amount}</h4>
 
                      <div className={styles.avaliacoes}>
-                           <span>
-                              <ThumbUpIcon color="success" />{' '}
-                              <h5>{produto.feedbacksPositivos}</h5>
-                           </span>
-                           <span>
-                              <ThumbDownIcon color="error" />{' '}
-                              <h5>{produto.feedbacksNegativos}</h5>
-                           </span>
-                        </div>
+                        <span>
+                           <ThumbUpIcon color="success" />{' '}
+                           <h5>{produto.feedbacksPositivos}</h5>
+                        </span>
+                        <span>
+                           <ThumbDownIcon color="error" />{' '}
+                           <h5>{produto.feedbacksNegativos}</h5>
+                        </span>
+                     </div>
                      <Button
                         variant="contained"
                         startIcon={<AddShoppingCartIcon />}

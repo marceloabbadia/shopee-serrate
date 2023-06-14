@@ -1,6 +1,6 @@
 .container {
-  display: flex;
-  margin-top: 2rem;
+   display: flex;
+   margin-top: 2rem;
 }
 
 .card {
@@ -82,5 +82,3 @@
    font-size: 20px;
    margin-left: 5px;
 }
-
-
