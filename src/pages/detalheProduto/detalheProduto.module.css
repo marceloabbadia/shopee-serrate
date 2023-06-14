@@ -21,8 +21,9 @@
    gap: 2rem;
 }
 
-.img {
-   margin-top: 120px;
+.info img {
+   width: 14rem;
+   height: 15rem;
 }
 
 .info {

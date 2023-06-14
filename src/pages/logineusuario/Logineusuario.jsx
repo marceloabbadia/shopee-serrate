@@ -10,27 +10,20 @@ import TextField from '@mui/material/TextField'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const LoginEUsuario = () => {
-   // -----> Login
    const [emailLogin, setEmailLogin] = useState([])
    const [senhaLogin, setSenhaLogin] = useState([])
 
-   // -----> cadastro
    const [nome, setNome] = useState([])
    const [telefone, setTelefone] = useState([])
    const [email, setEmail] = useState([])
    const [senha, setSenha] = useState([])
 
-   //-------> configuracao do input senha (olhos)
-
    const [showPassword, setShowPassword] = React.useState(false)
 
    const handleClickShowPassword = () => setShowPassword(show => !show)
-
-   // <------ Fim da configuracao input senha (olhos)
-
-   // ----> Inicio do Login
 
    const handleChangeEmailLogin = e => {
       setEmailLogin(e.target.value)
@@ -82,10 +75,6 @@ const LoginEUsuario = () => {
       setEmailLogin('')
       setSenhaLogin('')
    }
-
-   // <------ Fim do Login
-
-   // ------> Inicio do cadastro
 
    const handleChangeNome = e => {
       setNome(e.target.value)
@@ -148,11 +137,8 @@ const LoginEUsuario = () => {
       setSenha('')
    }
 
-   // Fim do cadastro <-----
-
    return (
       <>
-         {/* Inicio Login */}
          <div className={styles.container_geral}>
             <div className={styles.barra_central}></div>
             <div className={styles.login1}>
@@ -200,9 +186,12 @@ const LoginEUsuario = () => {
                   </FormControl>
                   <br />
                   <br />
-                  <Button variant="contained" type="submit">
-                     Entrar
-                  </Button>
+                  <Link to="/">
+                     <Button variant="contained" type="submit">
+                        Entrar
+                     </Button>
+                  </Link>
+
                   <p></p>
                   <br />
 
@@ -220,10 +209,6 @@ const LoginEUsuario = () => {
                   </p>
                </form>
             </div>
-
-            {/* Fim do Login */}
-
-            {/* Inicio cadastro */}
 
             <div className={styles.cadastro1}>
                <h2>Sou Novo Cliente</h2>
@@ -303,7 +288,6 @@ const LoginEUsuario = () => {
                      R$12 OFF na sua primeira compra
                   </p>
                </form>
-               {/* Fim cadastro */}
             </div>
          </div>
       </>
