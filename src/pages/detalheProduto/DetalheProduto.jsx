@@ -3,9 +3,8 @@ import { useContext, useEffect, useState } from 'react'
 import api from '../../api/api'
 import styles from './detalheProduto.module.css'
 import { CircularProgress } from '@mui/material'
-import { BsHandThumbsDown, BsHandThumbsUp } from 'react-icons/bs'
 import { CarrinhoContext } from '../../context/Context'
-import { ButtonGroup, Button, IconButton } from '@mui/material'
+import { Button } from '@mui/material'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import ThumbUpIcon from '@mui/icons-material/ThumbUp'
 import ThumbDownIcon from '@mui/icons-material/ThumbDown'
@@ -80,7 +79,6 @@ const DetalheProduto = () => {
                      <img
                         src={produto.image}
                         alt={produto.description}
-                        width={100}
                      />
                      <h2>{produto.title}</h2>
                      <strong>R$: {produto.price}</strong>
@@ -108,7 +106,6 @@ const DetalheProduto = () => {
             </div>
 
             <div className={styles.barra}>
-               {' '}
                Vejam também nossos produtos relacionados
             </div>
 

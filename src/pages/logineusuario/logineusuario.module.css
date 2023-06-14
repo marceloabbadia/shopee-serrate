@@ -8,34 +8,34 @@
 }
 
 .login1 > h2 {
-  margin-top: 50px;
+   margin-top: 50px;
 }
 
 .cadastro1 > h2 {
-  margin-top: 50px;
+   margin-top: 50px;
 }
 
 .login1 {
-  width: 50%;
-  text-align: center;
-  height: 435px;
+   width: 50%;
+   text-align: center;
+   height: 435px;
 }
 
 .cadastro1 {
-  height: 435px;
-  width: 50%;
-  text-align: center;
+   height: 435px;
+   width: 50%;
+   text-align: center;
 }
 
 .texto_login {
-  color: red;
-  font-size: 12px;
+   color: red;
+   font-size: 12px;
 }
 
 .barra_central {
-  margin-top: 150px;
-  position: absolute;
-  border-right: 2px solid rgba(0, 0, 0, 0.147);
-  width: 430px;
-  height: 400px;
+   margin-top: 150px;
+   position: absolute;
+   border-right: 2px solid rgba(0, 0, 0, 0.147);
+   width: 430px;
+   height: 400px;
 }

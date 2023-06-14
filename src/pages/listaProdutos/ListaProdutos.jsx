@@ -1,28 +1,22 @@
-import { useContext, useEffect, useState } from "react";
-import api from "../../api/api";
-import styles from "./listaProdutos.module.css";
-import { Link } from "react-router-dom";
-import { BsHandThumbsDown, BsHandThumbsUp } from "react-icons/bs";
-import { CarrinhoContext } from "../../context/Context";
-import PesquisaContext from "../../context/PesquisaContext";
-import ThumbDownIcon from "@mui/icons-material/ThumbDown";
-import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import { ButtonGroup, Button } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
-import Checkbox from "@mui/material/Checkbox";
-import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
-import Favorite from "@mui/icons-material/Favorite";
-import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
-import BookmarkIcon from "@mui/icons-material/Bookmark";
+import { useContext, useEffect, useState } from 'react'
+import api from '../../api/api'
+import styles from './listaProdutos.module.css'
+import { Link } from 'react-router-dom'
+import { CarrinhoContext } from '../../context/Context'
+import PesquisaContext from '../../context/PesquisaContext'
+import ThumbDownIcon from '@mui/icons-material/ThumbDown'
+import ThumbUpIcon from '@mui/icons-material/ThumbUp'
+import { Button } from '@mui/material'
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 
-const label = { inputProps: { "aria-label": "Checkbox demo" } };
+const label = { inputProps: { 'aria-label': 'Checkbox demo' } }
 
 const ListaProdutos = () => {
   const [data, setData] = useState([]);
   const token = localStorage.getItem("token");
   const [noItemsFound, setNoItemsFound] = useState(false);
 
-  const { searchValue, setSearchValue } = useContext(PesquisaContext);
+   const { searchValue, setSearchValue } = useContext(PesquisaContext)
 
   useEffect(() => {
     const fetchData = async () => {
@@ -134,4 +128,4 @@ const ListaProdutos = () => {
   );
 };
 
-export default ListaProdutos;
+export default ListaProdutos
