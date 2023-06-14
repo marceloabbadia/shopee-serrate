@@ -1,27 +1,37 @@
-import styles from './header.module.css'
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { BsSearch, BsCart3 } from 'react-icons/bs'
-import { RiLoginBoxLine } from 'react-icons/ri'
-import { AiOutlineClear } from 'react-icons/ai'
-import { useState, useContext } from 'react'
-import TextField from '@mui/material/TextField'
-import Box from '@mui/material/Box'
-import PesquisaContext from '../../context/PesquisaContext'
+import styles from "./header.module.css";
+import React from "react";
+import { Link } from "react-router-dom";
+import { BsSearch, BsCart3 } from "react-icons/bs";
+import { RiLoginBoxLine } from "react-icons/ri";
+import { AiOutlineClear } from "react-icons/ai";
+import { useState, useContext } from "react";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+import PesquisaContext from "../../context/PesquisaContext";
+import Stack from "@mui/material/Stack";
+import Button from "@mui/material/Button";
 
 const Header = () => {
   const { searchValue, setSearchValue } = useContext(PesquisaContext);
-  const token = localStorage.getItem("token");
+  let token = localStorage.getItem("token");
 
-   const handleSearch = event => {
-      event.preventDefault()
-      setSearchValue('')
-   }
+  const handleSearch = (event) => {
+    event.preventDefault();
+    setSearchValue("");
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+    navigate("/");
+  };
 
   const handleClickCarrinho = () => {
-    if (!token) {
+    token = localStorage.getItem("token");
+    if (token == null) {
       alert("Por favor, faça login para adicionar ao carrinho.");
     }
+    navigate("/carrinho");
   };
 
   return (
@@ -70,18 +80,23 @@ const Header = () => {
               <BsCart3 />
             </button>
           </Link>
+
           <br />
           <Link to="/login">
-            <button className={styles.btn_login}>
-              <RiLoginBoxLine />
-            </button>
+            <Button variant="text" className={styles.btn_login}>
+              Login
+            </Button>
           </Link>
 
-               <br />
-            </nav>
-         </div>
-      </>
-   )
-}
+          <Button variant="text" color="error" onClick={handleLogout}>
+            Logout
+          </Button>
 
-export default Header
+          <br />
+        </nav>
+      </div>
+    </>
+  );
+};
+
+export default Header;

@@ -15,7 +15,6 @@ import { Link, useNavigate } from "react-router-dom";
 const LoginEUsuario = () => {
   const [emailLogin, setEmailLogin] = useState([]);
   const [senhaLogin, setSenhaLogin] = useState([]);
-  const [token, setToken] = useState(null);
   const navigate = useNavigate();
 
   const [nome, setNome] = useState([]);
@@ -72,8 +71,7 @@ const LoginEUsuario = () => {
     const newToken =
       Math.random().toString(16).substring(2) +
       Math.random().toString(16).substring(2);
-    setToken(newToken);
-    localStorage.setItem("token", token);
+    localStorage.setItem("token", newToken);
 
     alert("Seu token foi validado e voce será redirecionado!");
     resetarFormLogin();
@@ -132,69 +130,6 @@ const LoginEUsuario = () => {
         Email: email,
         Senha: senha,
       });
-
-<<<<<<< HEAD
-   return (
-      <>
-         <div className={styles.container_geral}>
-            <div className={styles.barra_central}></div>
-            <div className={styles.login1}>
-               <h2>Já Sou Cliente</h2>
-               <br />
-               <form
-                  className={styles.form_login}
-                  onSubmit={handleSubmitFormLogin}
-               >
-                  <TextField
-                     required
-                     id="outlined-required"
-                     label="Email"
-                     value={emailLogin}
-                     onChange={handleChangeEmailLogin}
-                  />
-                  <br />
-                  <br />
-                  <FormControl sx={{ m: 1, width: '22ch' }} variant="outlined">
-                     <InputLabel htmlFor="outlined-adornment-password">
-                        Senha
-                     </InputLabel>
-                     <OutlinedInput
-                        value={senhaLogin}
-                        onChange={handleChangeSenhaLogin}
-                        id="outlined-adornment-password"
-                        type={showPassword ? 'text' : 'password'}
-                        endAdornment={
-                           <InputAdornment position="end">
-                              <IconButton
-                                 aria-label="toggle password visibility"
-                                 onClick={handleClickShowPassword}
-                                 edge="end"
-                              >
-                                 {showPassword ? (
-                                    <VisibilityOff />
-                                 ) : (
-                                    <Visibility />
-                                 )}
-                              </IconButton>
-                           </InputAdornment>
-                        }
-                        label="Password"
-                     />
-                  </FormControl>
-                  <br />
-                  <br />
-                  {/* <Link to="/"> */}
-                  <Button variant="contained" type="submit">
-                     Entrar
-                  </Button>
-                  {/* </Link> */}
-=======
-      localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
->>>>>>> a2175803163505916a45f5c268162d2f05f37b9f
-
-      alert("Usuario cadastrado com sucesso!");
-
-      resetarForm();
     }
   };
 
@@ -337,7 +272,6 @@ const LoginEUsuario = () => {
             <br />
             <br />
             <Button variant="outlined" type="reset" onClick={resetarForm}>
-              {" "}
               Limpar
             </Button>
             <br />
