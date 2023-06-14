@@ -14,6 +14,7 @@
    font-size: 20px;
 }
 
+<<<<<<< HEAD
 
 .carrinho .card {
    display: flex;
@@ -24,34 +25,42 @@
     border-color:  purple #3b32a1 purple #3b32a1;
     padding: 20px;
     
+=======
+.card {
+   display: flex;
+   justify-content: space-between;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+   padding-bottom: 20px;
+>>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
 }
 
-.carrinho .card img {
+.card img {
    width: 80px;
    height: 80px;
 }
 
-.carrinho .card p {
+.card p {
    width: 200px;
    display: center;
    font-family: 20px;
 }
-.carrinho .card .quantidade {
+.quantidade {
    display: flex;
    flex-direction: column;
    align-items: center;
 }
 
-.carrinho .card .quantidade p {
+.quantidade p {
    width: 50px;
    text-align: center;
 }
-.carrinho .card .quantidade button {
+.quantidade button {
    width: 50px;
 }
 
-.carrinho .total {
+.total {
    text-align: right;
+<<<<<<< HEAD
    border-top: 0.5px solid ;
    border-color:  purple  #3b32a1 blueviolet;
    font-size: 1rem;
@@ -60,4 +69,17 @@
 
 .retorno {
    margin: 1% 1%;
+=======
+}
+
+.tabela {
+   display: flex;
+   justify-content: space-between;
+   margin-right: 150px;
+}
+
+.btn_compra {
+   display: flex;
+   margin-left: auto;
+>>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
 }

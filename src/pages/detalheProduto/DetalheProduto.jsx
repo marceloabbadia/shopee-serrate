@@ -17,8 +17,6 @@ const DetalheProduto = () => {
    const [loaded, setLoaded] = useState(false)
    const [relacionados, setRelacionados] = useState([])
    const { id } = useParams()
-   // const [positivo, setPositivo] = useState(0)
-   // const [negativo, setNegativo] = useState(0)
 
    useEffect(() => {
       lerDados()
@@ -46,10 +44,10 @@ const DetalheProduto = () => {
 
    const GlobalState = useContext(CarrinhoContext)
    const dispatch = GlobalState.dispatch
-   console.log(GlobalState)
 
    return (
       <>
+         <p style={{ visibility: 'hidden' }}>{(produto.quantidade = 1)}</p>
          {loaded && (
             <CircularProgress
                style={{
@@ -64,6 +62,7 @@ const DetalheProduto = () => {
                }}
             />
          )}
+<<<<<<< HEAD
          <div className={styles.paginatoda}>
             <div className={styles.retorno}>
                <Link to="/">
@@ -85,6 +84,24 @@ const DetalheProduto = () => {
                      <p>{produto.description}</p>
                      <h3>{produto.category}</h3>
                      <h4>Quantidade: {produto.amount}</h4>
+=======
+         <Link to="/">
+            <button className={styles.btn_voltar}>voltar</button>
+         </Link>
+         <div className="container">
+            <div className={styles.produto}>
+               <div className={styles.info}>
+                  <img
+                     src={produto.image}
+                     alt={produto.description}
+                     width={200}
+                  />
+                  <h2>{produto.title}</h2>
+                  <strong>R$: {produto.price}</strong>
+                  <p>{produto.description}</p>
+                  <h3>{produto.category}</h3>
+                  <h4>Quantidade: {produto.amount}</h4>
+>>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
 
 
                      <div className={styles.avaliacoes}>
@@ -102,6 +119,7 @@ const DetalheProduto = () => {
                </div>
             </div>
 
+<<<<<<< HEAD
             <div className={styles.relacionados}>
                {relacionados.map((item, index) => {
                   return (
@@ -119,6 +137,36 @@ const DetalheProduto = () => {
                   )
                })}
             </div>
+=======
+         <div className={styles.barra}>
+            {' '}
+            Vejam também nossos produtos relacionados
+         </div>
+
+         <div className={styles.relacionados}>
+            {relacionados.map((item, index) => {
+               {
+                  if (item.amount > 0) {
+                     return (
+                        <div key={index} className={styles.cards_relacionados}>
+                           <Link
+                              to={`/detalheProduto/${item.id}`}
+                              reloadDocument
+                           >
+                              <img
+                                 src={item.image}
+                                 alt={item.description}
+                                 width={100}
+                              />
+                              <p>{item.title}</p>
+                              <h2>R${item.price}</h2>
+                           </Link>
+                        </div>
+                     )
+                  }
+               }
+            })}
+>>>>>>> 7d90eb06c3ee906cbb52d171e55658db5ce001f5
          </div>
       </>
    )
