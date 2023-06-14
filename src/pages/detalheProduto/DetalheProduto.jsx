@@ -81,19 +81,23 @@ const DetalheProduto = () => {
                         alt={produto.description}
                      />
                      <h2>{produto.title}</h2>
-                     <strong>R$: {produto.price}</strong>
+                     <h3>R$: {produto.price}</h3>
                      <p>{produto.description}</p>
                      <h3>{produto.category}</h3>
                      <h4>Quantidade: {produto.amount}</h4>
 
                      <div className={styles.avaliacoes}>
-                        <ThumbUpIcon color="success" />
-                        <p>{produto.feedbacksPositivos}</p>
-                        <ThumbDownIcon color="error" />
-                        <p>{produto.feedbacksNegativos}</p>
-                     </div>
+                           <span>
+                              <ThumbUpIcon color="success" />{' '}
+                              <h5>{produto.feedbacksPositivos}</h5>
+                           </span>
+                           <span>
+                              <ThumbDownIcon color="error" />{' '}
+                              <h5>{produto.feedbacksNegativos}</h5>
+                           </span>
+                        </div>
                      <Button
-                        variant="outlined"
+                        variant="contained"
                         startIcon={<AddShoppingCartIcon />}
                         onClick={() =>
                            dispatch({ type: 'ADD', payload: produto })
