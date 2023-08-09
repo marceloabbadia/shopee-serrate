@@ -1,9 +1,10 @@
-﻿# shopee-serratec
+<h1>Shopee-serratec</h1>
  
  ## Grupo 4
  
- # Trabalho final do modulo React do curso SerraTec
+ # Trabalho final do módulo React da residência no SerraTec.
  
+<p> Trabalho em grupo para que fosse desenvolvido em react um site para comércio de produtos e que explorasse bastante os recursos do framework (Hooks) e consumir uma Api para realizar login e salvar produtos no carrinho. </p>
  ##Integrantes
  
 Carlos Felipe Leopoldino da silva
